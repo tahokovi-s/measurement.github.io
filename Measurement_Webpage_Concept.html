@@ -1,0 +1,3040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Measurement Guide for Tax Research - Lester & Olbert (2025)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2e2d29;
+            background-color: #f4f4f4;
+            border-top: 4px solid #8C1515;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8C1515 0%, #B1040E 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .header h2 {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .nav-tabs {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-tabs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 1rem 2rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: #666;
+            font-size: 1rem;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            color: #8C1515;
+            background-color: #f8f9fa;
+        }
+
+        .nav-tab.active {
+            color: #8C1515;
+            border-bottom-color: #8C1515;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .tab-content {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .hero-section h2 {
+            color: #8C1515;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            border-color: #8C1515;
+            box-shadow: 0 5px 15px rgba(140, 21, 21, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #8C1515;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .purpose-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .purpose-list li {
+            padding: 1rem;
+            margin: 1rem 0;
+            background: #f8f9fa;
+            border-left: 4px solid #8C1515;
+            border-radius: 4px;
+        }
+
+        .purpose-list strong {
+            color: #8C1515;
+        }
+
+        .citation-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #8C1515;
+        }
+
+        .citation-box h3 {
+            color: #8C1515;
+            margin-bottom: 1rem;
+        }
+
+        .citation-box pre {
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        th {
+            background: #8C1515;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .section-header {
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #8C1515;
+        }
+
+        .section-header h2 {
+            color: #8C1515;
+        }
+
+        .section-header h3 {
+            color: #820000;
+            margin-top: 0.5rem;
+        }
+
+        .subsection {
+            margin: 1.5rem 0;
+        }
+
+        .subsection h4 {
+            color: #8C1515;
+            margin-bottom: 0.5rem;
+        }
+
+        .accordion {
+            margin: 1rem 0;
+        }
+
+        .accordion-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: #f8f9fa;
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: #8C1515;
+            transition: background 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: #e9ecef;
+        }
+
+        .accordion-content {
+            padding: 1rem;
+            display: none;
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #8C1515;
+            color: white;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+        }
+
+        .badge.admin { background: #8C1515; }
+        .badge.public { background: #007C92; }
+        .badge.private { background: #E98300; color: white; }
+
+        .search-box {
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #8C1515;
+        }
+
+        .footer {
+            background: #2e2d29;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+        }
+
+        .footer a {
+            color: #E98300;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .panel-section {
+            margin: 2rem 0;
+        }
+
+        .overview-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .overview-box h4 {
+            color: #8C1515;
+            margin-bottom: 0.5rem;
+        }
+
+        .overview-box ul {
+            margin-left: 1.5rem;
+        }
+
+        .overflow-scroll {
+            overflow-x: auto;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            color: #8C1515;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .back-button:hover {
+            text-decoration: underline;
+        }
+        
+        .back-button::before {
+            content: "←";
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .panel-view {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .panel-view.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Interactive Measurement Guide for Tax Research</h1>
+            <h2>Rebecca Lester (Stanford GSB) & Marcel Olbert (London Business School)</h2>
+            <h2 style="margin-top: 0.5rem; font-size: 1rem;">Journal of Accounting and Economics (2025)</h2>
+        </div>
+    </header>
+
+    <nav class="nav-tabs">
+        <div class="nav-tabs-container">
+            <button class="nav-tab active" onclick="openTab(event, 'home')">Home</button>
+            <button class="nav-tab" onclick="openTab(event, 'explore')">Explore by Outcome</button>
+            <button class="nav-tab" onclick="openTab(event, 'browse')">Browse Data Sources</button>
+            <button class="nav-tab" onclick="openTab(event, 'search')">Search Measures</button>
+            <button class="nav-tab" onclick="openTab(event, 'glossary')">Glossary</button>
+            <button class="nav-tab" onclick="openTab(event, 'about')">About</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- HOME TAB -->
+        <div id="home" class="tab-content active">
+            <div class="hero-section">
+                <h2>Welcome to the Interactive Measurement Tables</h2>
+                <p>An interactive resource from <strong><a href="https://www.sciencedirect.com/science/article/pii/S0165410125000734" target="_blank" style="color: #8C1515;">"Firms' Real and Reporting Responses to Taxation: A Review"</a></strong></p>
+                <p style="margin-top: 0.5rem;">Rebecca Lester (Stanford GSB) and Marcel Olbert (London Business School)</p>
+                <p style="margin-top: 0.5rem;"><em>Journal of Accounting and Economics</em> 80(2-3), 2025</p>
+                <p style="margin-top: 1.5rem;">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0165410125000734" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background: #8C1515; color: white; text-decoration: none; border-radius: 4px; font-weight: 600;">Access Full Paper (Open Access)</a>
+                </p>
+            </div>
+
+            <div class="section-header">
+                <h2>Purpose of This Resource</h2>
+            </div>
+
+            <ul class="purpose-list">
+                <li>
+                    <strong>Improve Measurement Consistency:</strong> Help researchers make informed choices about which measures and data sources align with their research questions, promoting greater comparability across studies examining similar constructs.
+                </li>
+                <li>
+                    <strong>Facilitate Access to Data Sources:</strong> Offer detailed information about data availability, access requirements, and coverage across different datasets, helping researchers efficiently identify appropriate data sources for their projects.
+                </li>
+            </ul>
+
+            <div class="section-header">
+                <h2>How to Use This Resource</h2>
+            </div>
+
+            <div class="card-grid">
+                <div class="card" onclick="openTab(event, 'explore')">
+                    <h3>📊 Explore by Outcome</h3>
+                    <p>Browse measures organized by research outcome (investment, employment, innovation, etc.)</p>
+                </div>
+                <div class="card" onclick="openTab(event, 'browse')">
+                    <h3>🗂️ Browse Data Sources</h3>
+                    <p>Search our comprehensive database of 49 datasets used in tax research</p>
+                </div>
+                <div class="card" onclick="openTab(event, 'search')">
+                    <h3>🔍 Search Measures</h3>
+                    <p>Find specific measures by keyword, formula, or citation</p>
+                </div>
+                <div class="card" onclick="openTab(event, 'about')">
+                    <h3>ℹ️ About</h3>
+                    <p>Information on how to cite this resource and the original paper</p>
+                </div>
+            </div>
+
+            <div class="citation-box">
+                <h3>Citation</h3>
+                <p><strong>Please cite the original paper as:</strong></p>
+                <blockquote style="margin: 1rem 0; padding-left: 1rem; border-left: 4px solid #8C1515;">
+                    Lester, Rebecca and Marcel Olbert. 2025. "Firms' Real and Reporting Responses to Taxation: A Review." <em>Journal of Accounting and Economics</em> 80(2-3): 101837. <a href="https://doi.org/10.1016/j.jacceco.2025.101837" target="_blank" style="color: #8C1515;">https://doi.org/10.1016/j.jacceco.2025.101837</a>
+                </blockquote>
+                <p><strong>BibTeX:</strong></p>
+                <pre>@article{lester_olbert_2025,
+  author = {Lester, Rebecca and Olbert, Marcel},
+  title = {Firms' Real and Reporting Responses to Taxation: A Review},
+  journal = {Journal of Accounting and Economics},
+  year = {2025},
+  volume = {80},
+  number = {2-3},
+  pages = {101837},
+  doi = {10.1016/j.jacceco.2025.101837}
+}</pre>
+            </div>
+        </div>
+
+        <!-- EXPLORE BY OUTCOME TAB -->
+        <div id="explore" class="tab-content">
+            <!-- Landing View -->
+            <div id="explore-landing">
+                <div class="section-header">
+                    <h2>Explore by Outcome</h2>
+                    <p>Browse measures organized by the type of outcome you wish to study. Select a category below to view detailed measurement tables.</p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card" onclick="showPanel('outcome-investment')">
+                        <h3>📈 Investment Measures</h3>
+                        <p>Capital Expenditures: Annual Changes and Investment Levels (15 measures)</p>
+                    </div>
+                    <div class="card" onclick="showPanel('outcome-rnd')">
+                        <h3>🧪 R&D and Innovation</h3>
+                        <p>R&D Expenditures, Patents, and Citations (14 measures)</p>
+                    </div>
+                    <div class="card" onclick="showPanel('outcome-ma')">
+                        <h3>🤝 M&A Measures</h3>
+                        <p>Deal Measures: Probabilities, Counts, Values, and Deal Profitability (14 measures)</p>
+                    </div>
+                    <div class="card" onclick="showPanel('outcome-employment')">
+                        <h3>👥 Employment & Compensation</h3>
+                        <p>Employees, Wages, and Satisfaction (27 measures)</p>
+                    </div>
+                    <div class="card" onclick="showPanel('outcome-geo')">
+                        <h3>🌍 Geographic Allocation</h3>
+                        <p>Foreign Subsidiaries, Investment Flows, and Lockout Effects (13 measures)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investment View -->
+            <div id="outcome-investment" class="panel-view">
+                <button class="back-button" onclick="showExploreLanding()">Back to Outcomes</button>
+                <div class="section-header">
+                    <h2>Investment Measures</h2>
+                    <p>Capital Expenditures and Fixed Assets</p>
+                </div>
+
+                <div class="overview-box" style="margin-bottom: 1.5rem;">
+                    <h4>Legend</h4>
+                    <p><strong>[*]</strong> BEA/IRS/CENSUS: Data source requires application/review; outputs are disclosure-reviewed; BEA and IRS access limited to US citizens.</p>
+                    <p style="margin-top: 0.5rem;"><strong>Paper References:</strong>
+                        [a] <a href="https://doi.org/10.1111/1475-679X.12269" target="_blank" style="color: #8C1515;">Lester (2019)</a>;
+                        [b] <a href="https://doi.org/10.1016/j.jfineco.2021.06.004" target="_blank" style="color: #8C1515;">Albertus et al. (2022)</a>;
+                        [c] <a href="https://www.nber.org/papers/w29485" target="_blank" style="color: #8C1515;">Curtis et al. (2022)</a>;
+                        [d] <a href="https://doi.org/10.2308/TAR-2019-0259" target="_blank" style="color: #8C1515;">Amberger et al. (2021)</a>, <a href="https://doi.org/10.2308/accr-51956" target="_blank" style="color: #8C1515;">Bethmann et al. (2018)</a>, <a href="https://doi.org/10.2308/TAR-2019-0338" target="_blank" style="color: #8C1515;">Chen (2023)</a>, <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4125715" target="_blank" style="color: #8C1515;">De Simone & Olbert (2024)</a>, <a href="https://academic.oup.com/rfs/article/32/8/3144/5236965" target="_blank" style="color: #8C1515;">Jacob et al. (2019)</a>;
+                        [e] <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4255473" target="_blank" style="color: #8C1515;">Samuel (2022)</a>;
+                        [f] <a href="https://doi.org/10.1257/pol.20180592" target="_blank" style="color: #8C1515;">Liu (2020)</a>;
+                        [g] <a href="https://doi.org/10.1093/rfs/hhv005" target="_blank" style="color: #8C1515;">Arena &amp; Kutner (2015)</a>;
+                        [h] <a href="https://doi.org/10.2308/JATA-19-027" target="_blank" style="color: #8C1515;">Green &amp; Kerr (2022)</a>;
+                        [i] <a href="https://doi.org/10.2308/accr-52623" target="_blank" style="color: #8C1515;">Guenther et al. (2020)</a>;
+                        [j] <a href="https://doi.org/10.1257/aer.20140855" target="_blank" style="color: #8C1515;">Zwick &amp; Mahon (2017)</a>;
+                        [k] <a href="https://doi.org/10.2308/TAR-2019-0371" target="_blank" style="color: #8C1515;">Dobridge (2021)</a>;
+                        [l] <a href="https://doi.org/10.1016/j.jacceco.2022.101491" target="_blank" style="color: #8C1515;">De Simone et al. (2022)</a>;
+                        [m] <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3820017" target="_blank" style="color: #8C1515;">Fox, Krull &amp; Rane (2021)</a>;
+                        [n] <a href="https://doi.org/10.1257/aer.20130098" target="_blank" style="color: #8C1515;">Yagan (2015)</a>;
+                        [o] <a href="https://doi.org/10.1111/1475-679X.12405" target="_blank" style="color: #8C1515;">Coles et al. (2022)</a>.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel A: Annual Change in Fixed Assets (10 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-inv-a" placeholder="Filter table..." onkeyup="filterTable('table-inv-a', 'filter-inv-a')">
+                    <div class="overflow-scroll">
+                        <table id="table-inv-a">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>CapEx<sub>t</sub> / PP&E<sub>t-1</sub></td>
+                                    <td>Adjusts for size; improves cross-unit comparability; simple and directly interpretable magnitude</td>
+                                    <td>Sensitive to small/noisy denominators</td>
+                                    <td>COMP<sup>[a]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>CapEx<sub>t</sub><sup>Dom/For</sup> / PP&E<sub>t-1</sub></td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>BEA-MICRO<sup>[*],[b],[a]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>CapEx<sub>i,t</sub> / PP&E<sub>i,t-1</sub></td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>CM, ASM, LBD, ACES<sup>[*],[c]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Δ Net Fixed Assets<sub>t</sub> / Assets<sub>t-1</sub></td>
+                                    <td>Captures period-to-period investment changes; adjusts for size; improves cross-unit comparability</td>
+                                    <td>See #1</td>
+                                    <td>ORBIS<sup>[d]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>(Δ NFA<sub>t</sub> + Depr<sub>t</sub>) / Assets<sub>t-1</sub></td>
+                                    <td>See #1; see #4; approximates gross investment via depreciation add-backs</td>
+                                    <td>See #1</td>
+                                    <td>ORBIS<sup>[e]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>(Δ NFCA<sub>t</sub> + D&A<sub>t</sub>) / Assets<sub>t-1</sub></td>
+                                    <td>See #5</td>
+                                    <td>See #5; includes intangibles, which are a separate category of investment. Intangibles on the balance sheet represent only a subset of the firm's intangibles</td>
+                                    <td>ORBIS<sup>[f]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>CapEx<sup>Dom/For</sup> / Total Assets</td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>WSP<sup>[g]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>(CapEx - PP&E Sale Proceeds) / Assets<sub>t-1</sub></td>
+                                    <td>See #1; see #4; removes asset sale effects</td>
+                                    <td>See #1</td>
+                                    <td>WSP<sup>[h]</sup>, COMP<sup>[i]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Investment<sub>t</sub> / Capital Stock<sub>t-1</sub></td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>IRS-SOI-4562<sup>[*],[j]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Log(Investment)</td>
+                                    <td>Reduces skew and stabilizes relative variation; enables multiplicative interpretation</td>
+                                    <td>Undefined for non-positive values; zeros need adjustment</td>
+                                    <td>CM<sup>[*],[c]</sup>, QWI<sup>[c]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel B: Level of Investment (5 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-inv-b" placeholder="Filter table..." onkeyup="filterTable('table-inv-b', 'filter-inv-b')">
+                    <div class="overflow-scroll">
+                        <table id="table-inv-b">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>11</td>
+                                    <td>log(Dom CapEx / For CapEx)</td>
+                                    <td>See #10; see #1</td>
+                                    <td>Undefined for non-positive values; zeros need adjustment; sensitive to small/noisy denominators</td>
+                                    <td>COMP<sup>[k]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Log(Tangible fixed assets)</td>
+                                    <td>See #10</td>
+                                    <td>See #10</td>
+                                    <td>ORBIS<sup>[l]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>CapEx (level)</td>
+                                    <td>Simple and directly interpretable magnitude</td>
+                                    <td>Lacks size adjustment</td>
+                                    <td>COMP<sup>[m]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>Annual cash outlays for depreciable PP&E</td>
+                                    <td>See #13</td>
+                                    <td>See #13</td>
+                                    <td>IRS-SOI-4562<sup>[*],[n]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>Equity issuances minus dividends</td>
+                                    <td>See #13</td>
+                                    <td>See #13</td>
+                                    <td>IRS-SOI-4562<sup>[*],[o]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- R&D View -->
+            <div id="outcome-rnd" class="panel-view">
+                <button class="back-button" onclick="showExploreLanding()">Back to Outcomes</button>
+                <div class="section-header">
+                    <h2>R&D and Innovation Measures</h2>
+                    <p>R&D Expenditures, Patents, and Citations</p>
+                </div>
+
+                <div class="overview-box" style="margin-bottom: 1.5rem;">
+                    <h4>Legend</h4>
+                    <p><strong>Paper References:</strong>
+                        [a] <a href="https://www.sciencedirect.com/science/article/pii/S0165410125000205" target="_blank" style="color: #8C1515;">Cowx (2025)</a>;
+                        [b] <a href="https://doi.org/10.2308/atax-50964" target="_blank" style="color: #8C1515;">Finley et al. (2015)</a>;
+                        [c] <a href="https://onlinelibrary.wiley.com/doi/abs/10.1506/CF2E-HUVC-GAFY-5H56" target="_blank" style="color: #8C1515;">Klassen et al. (2004)</a>;
+                        [d] <a href="https://www.aeaweb.org/articles?id=10.1257/pol.20140467" target="_blank" style="color: #8C1515;">Agrawal et al. (2020)</a>;
+                        [e] <a href="https://www.aeaweb.org/articles?id=10.1257/pol.20170403" target="_blank" style="color: #8C1515;">Guceri &amp; Liu (2019)</a>;
+                        [f] <a href="https://www.jstor.org/stable/2491268" target="_blank" style="color: #8C1515;">Berger (1993)</a>;
+                        [g] <a href="https://www.aeaweb.org/articles?id=10.1257/aer.20191758" target="_blank" style="color: #8C1515;">Chen et al. (2021)</a>;
+                        [h] <a href="https://www.sciencedirect.com/science/article/pii/S0047272716300482" target="_blank" style="color: #8C1515;">Rao (2016)</a>;
+                        [i] <a href="https://doi.org/10.1016/j.jacceco.2022.101479" target="_blank" style="color: #8C1515;">He et al. (2022)</a>;
+                        [j] <a href="https://publications.aaahq.org/jata/article-abstract/45/2/7/10115/The-Effect-of-Intellectual-Property-Boxes-on?redirectedFrom=fulltext" target="_blank" style="color: #8C1515;">Bornemann et al. (2023)</a>;
+                        [k] <a href="https://www.journals.uchicago.edu/doi/abs/10.17310/ntj.2015.4.07" target="_blank" style="color: #8C1515;">Bradley et al. (2015)</a>;
+                        [l] <a href="https://publications.aaahq.org/jata/article/46/1/57/11526/Did-FASB-Interpretation-Number-48-FIN-48-Affect" target="_blank" style="color: #8C1515;">Goldman (2023)</a>;
+                        [m] <a href="https://www.sciencedirect.com/science/article/pii/S016541012400048X" target="_blank" style="color: #8C1515;">Hepfer et al. (2025)</a>;
+                        [n] <a href="https://doi.org/10.1111/1911-3846.12588" target="_blank" style="color: #8C1515;">Huang et al. (2020)</a>, <a href="https://publications.aaahq.org/accounting-review/article-abstract/96/3/403/4289/Dividend-Taxes-Investor-Horizon-and-Idiosyncratic?redirectedFrom=fulltext" target="_blank" style="color: #8C1515;">Li et al. (2021)</a>;
+                        [o] <a href="https://doi.org/10.1093/qje/qjab022" target="_blank" style="color: #8C1515;">Akcigit et al. (2022)</a>.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel A: R&D Expenditures (3 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-rnd-a" placeholder="Filter table..." onkeyup="filterTable('table-rnd-a', 'filter-rnd-a')">
+                    <div class="overflow-scroll">
+                        <table id="table-rnd-a">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>R&D Expend / Assets<sub>t0</sub></td>
+                                    <td>Adjusts for size; improves cross-unit comparability; simple and directly interpretable magnitude</td>
+                                    <td>Sensitive to small/noisy denominators</td>
+                                    <td>COMP<sup>[a]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Log(R&D expenditure)</td>
+                                    <td>Reduces skew and stabilizes relative variation; enables multiplicative interpretation</td>
+                                    <td>Undefined for non-positive values; zeros need adjustment</td>
+                                    <td>COMP<sup>[b],[c]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>R&D expenditures</td>
+                                    <td>Simple and directly interpretable magnitude</td>
+                                    <td>Lacks size adjustment</td>
+                                    <td>CRA<sup>[d]</sup>, HMRC<sup>[e]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel B: Patents & Innovation Signals (2 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-rnd-b" placeholder="Filter table..." onkeyup="filterTable('table-rnd-b', 'filter-rnd-b')">
+                    <div class="overflow-scroll">
+                        <table id="table-rnd-b">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>4</td>
+                                    <td>log(1 + Patents post-IPO)</td>
+                                    <td>See #2</td>
+                                    <td>See #2; ignores patent quality; adding 1 is a statistical convenience, not theory-driven, and can bias results if zeros are frequent</td>
+                                    <td>UVA-DARDEN<sup>[m]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Country Inventors<sub>i,t</sub> / Total Inventors<sub>i,t</sub></td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>USPTO<sup>[n]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel C: R&D Intensity (1 Measure)</h3>
+                    <input type="text" class="search-box" id="filter-rnd-c" placeholder="Filter table..." onkeyup="filterTable('table-rnd-c', 'filter-rnd-c')">
+                    <div class="overflow-scroll">
+                        <table id="table-rnd-c">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>6</td>
+                                    <td>R&D Expend / Total Sales</td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>COMP<sup>[f]</sup>, CHINA-TAX<sup>[g]</sup>, IRS-SOI-4562<sup>[h]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel D: Number of Patents (5 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-rnd-d" placeholder="Filter table..." onkeyup="filterTable('table-rnd-d', 'filter-rnd-d')">
+                    <div class="overflow-scroll">
+                        <table id="table-rnd-d">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Citation-weighted patent counts</td>
+                                    <td>See #3; quality-weighted proxy</td>
+                                    <td>See #3</td>
+                                    <td>PATSTAT, ORBIS<sup>[i]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Log(Patent grants)</td>
+                                    <td>See #2</td>
+                                    <td>See #4</td>
+                                    <td>PATSTAT<sup>[j]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Log(Patent applications)</td>
+                                    <td>See #2</td>
+                                    <td>See #4</td>
+                                    <td>PATSTAT<sup>[k]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Number of patents</td>
+                                    <td>See #3</td>
+                                    <td>See #3</td>
+                                    <td>PATSTAT<sup>[k]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Log(Future patent applications)</td>
+                                    <td>See #2</td>
+                                    <td>See #4</td>
+                                    <td>ORBIS<sup>[l]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel E: Patent Citations (3 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-rnd-e" placeholder="Filter table..." onkeyup="filterTable('table-rnd-e', 'filter-rnd-e')">
+                    <div class="overflow-scroll">
+                        <table id="table-rnd-e">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Log(Forward citations)</td>
+                                    <td>See #2</td>
+                                    <td>See #2</td>
+                                    <td>G-PAT, USPTO<sup>[m]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>Log(Non-self-citations (3-year ahead))</td>
+                                    <td>See #2</td>
+                                    <td>See #2</td>
+                                    <td>G-PAT, USPTO<sup>[n]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>Citations per patent</td>
+                                    <td>See #1; see #7</td>
+                                    <td>See #1</td>
+                                    <td>NBER-PAT<sup>[o]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- M&A View -->
+            <div id="outcome-ma" class="panel-view">
+                <button class="back-button" onclick="showExploreLanding()">Back to Outcomes</button>
+                <div class="section-header">
+                    <h2>M&A Measures</h2>
+                    <p>Deal Probability, Count, Value, and Performance</p>
+                </div>
+
+                <div class="overview-box" style="margin-bottom: 1.5rem;">
+                    <h4>Legend</h4>
+                    <p><strong>Paper References:</strong>
+                        [a] <a href="https://doi.org/10.1016/j.jpubeco.2019.05.005" target="_blank" style="color: #8C1515;">Arulampalam et al. (2019)</a>;
+                        [b] <a href="https://doi.org/10.2308/accr.2004.79.4.859" target="_blank" style="color: #8C1515;">Ayers et al. (2004)</a>;
+                        [c] <a href="https://doi.org/10.1046/j.1540-6261.2003.00622.x" target="_blank" style="color: #8C1515;">Ayers et al. (2003)</a>;
+                        [d] <a href="https://doi.org/10.1016/j.jacceco.2020.101315" target="_blank" style="color: #8C1515;">Blouin et al. (2021)</a>;
+                        [e] <a href="https://doi.org/10.1016/j.jacceco.2021.101448" target="_blank" style="color: #8C1515;">Bradley et al. (2021)</a>;
+                        [f] <a href="https://doi.org/10.1111/1911-3846.12226" target="_blank" style="color: #8C1515;">Chow et al. (2016)</a>;
+                        [g] <a href="https://doi.org/10.2308/tar-2018-0376" target="_blank" style="color: #8C1515;">Hanlon et al. (2021)</a>;
+                        [h] <a href="https://www.sciencedirect.com/science/article/pii/S004727270700182X" target="_blank" style="color: #8C1515;">Huizinga &amp; Laeven (2008)</a>;
+                        [i] <a href="https://doi.org/10.1016/j.euroecorev.2020.103505" target="_blank" style="color: #8C1515;">Todtenhaupt et al. (2020)</a>;
+                        [j] <a href="https://doi.org/10.1016/j.jpubeco.2016.03.005" target="_blank" style="color: #8C1515;">Feld et al. (2016)</a>.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel A: Probability of M&A (1 Measure)</h3>
+                    <input type="text" class="search-box" id="filter-ma-a" placeholder="Filter table..." onkeyup="filterTable('table-ma-a', 'filter-ma-a')">
+                    <div class="overflow-scroll">
+                        <table id="table-ma-a">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Dummy for acquisition</td>
+                                    <td>Simple and directly interpretable magnitude; bounded support</td>
+                                    <td>Loses information on intensity, size, and magnitude</td>
+                                    <td>ZEPHYR<sup>[d],[e]</sup>, SDC<sup>[d],[e],[c]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel B: Number of Deals (3 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-ma-b" placeholder="Filter table..." onkeyup="filterTable('table-ma-b', 'filter-ma-b')">
+                    <div class="overflow-scroll">
+                        <table id="table-ma-b">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Number of Deals</td>
+                                    <td>Simple and directly interpretable magnitude</td>
+                                    <td>Lacks size adjustment</td>
+                                    <td>ZEPHYR<sup>[i],[h]</sup>, SDC<sup>[i],[h],[c]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Log(M&A deals)</td>
+                                    <td>Reduces skew and stabilizes relative variation; enables multiplicative interpretation</td>
+                                    <td>Undefined for non-positive values; zeros need adjustment</td>
+                                    <td>ORBIS, ZEPHYR<sup>[e]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Log(M&A bids)</td>
+                                    <td>See #3</td>
+                                    <td>Adding 1 is a statistical convenience, not theory-driven, and can bias results if zeros are frequent</td>
+                                    <td>SDC<sup>[d]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel C: Value of Deals (2 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-ma-c" placeholder="Filter table..." onkeyup="filterTable('table-ma-c', 'filter-ma-c')">
+                    <div class="overflow-scroll">
+                        <table id="table-ma-c">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Log(Domestic acquisition value)</td>
+                                    <td>See #4</td>
+                                    <td>See #4</td>
+                                    <td>SDC<sup>[d]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Log(Total deal value)</td>
+                                    <td>See #4</td>
+                                    <td>See #4</td>
+                                    <td>SDC<sup>[d],[h]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel D: Location of M&A (1 Measure)</h3>
+                    <input type="text" class="search-box" id="filter-ma-d" placeholder="Filter table..." onkeyup="filterTable('table-ma-d', 'filter-ma-d')">
+                    <div class="overflow-scroll">
+                        <table id="table-ma-d">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Acquirer origin country indicator</td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>COMP<sup>[h]</sup>, ZEPHYR<sup>[a],[j]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel E: Profitability (6 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-ma-e" placeholder="Filter table..." onkeyup="filterTable('table-ma-e', 'filter-ma-e')">
+                    <div class="overflow-scroll">
+                        <table id="table-ma-e">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Acquisition premium over target price</td>
+                                    <td>Adjusts for size; improves cross-unit comparability</td>
+                                    <td>Proceeds/book mismatches may overstate negatives; sensitive to small/noisy denominators</td>
+                                    <td>SDC<sup>[f],[d]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Short-window stock price reaction</td>
+                                    <td>See #2</td>
+                                    <td>See #2</td>
+                                    <td>SDC<sup>[f],[d]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>3-day CAR for acquiring firm</td>
+                                    <td>See #2</td>
+                                    <td>See #2</td>
+                                    <td>SDC<sup>[f],[d]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Change in industry-adjusted ROA</td>
+                                    <td>Captures period-to-period investment changes</td>
+                                    <td>See #2</td>
+                                    <td>SDC<sup>[f],[d]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Post-acquisition 3-year BHAR</td>
+                                    <td>See #2</td>
+                                    <td>See #2</td>
+                                    <td>SDC<sup>[f],[d]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>Forward 24-month BHAR</td>
+                                    <td>See #2</td>
+                                    <td>See #2</td>
+                                    <td>SDC<sup>[f],[d]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel F: M&A Financing (1 Measure)</h3>
+                    <input type="text" class="search-box" id="filter-ma-f" placeholder="Filter table..." onkeyup="filterTable('table-ma-f', 'filter-ma-f')">
+                    <div class="overflow-scroll">
+                        <table id="table-ma-f">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>14</td>
+                                    <td>Tax-free stock-for-stock indicator</td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>ZEPHYR<sup>[g]</sup>, NYSE-AMEX-DEL<sup>[b]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Employment View -->
+            <div id="outcome-employment" class="panel-view">
+                <button class="back-button" onclick="showExploreLanding()">Back to Outcomes</button>
+                <div class="section-header">
+                    <h2>Employment & Compensation Measures</h2>
+                    <p>Employees, Wages, and Satisfaction</p>
+                </div>
+
+                <div class="overview-box" style="margin-bottom: 1.5rem;">
+                    <h4>Legend</h4>
+                    <p><strong>[*]</strong> BEA/IRS/CENSUS: Data source requires application/review; outputs are disclosure-reviewed; BEA and IRS access limited to US citizens.</p>
+                    <p style="margin-top: 0.5rem;"><strong>Paper References:</strong>
+                        [a] <a href="https://tax.kenaninstitute.unc.edu/publication/market-reactions-as-macroeconomic-barometer-quantifying-the-tcjas-effect-on-gdp-and-wages/" target="_blank" style="color: #8C1515;">Standridge (2023)</a>;
+                        [b] <a href="https://ssrn.com/abstract=3977297" target="_blank" style="color: #8C1515;">Dyreng &amp; Hills (2022)</a>;
+                        [d] <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3997002" target="_blank" style="color: #8C1515;">Dobridge, Landefeld &amp; Mortenson (2022)</a>;
+                        [e] <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2536677" target="_blank" style="color: #8C1515;">Ljungqvist &amp; Smolyansky (2018)</a>;
+                        [f] <a href="https://jcsuarez.com/Files/Ashulter_et_al_HTP.pdf" target="_blank" style="color: #8C1515;">Altshuler, Boller &amp; Serrato (2023)</a>;
+                        [g] <a href="https://doi.org/10.1257/pandp.20241095" target="_blank" style="color: #8C1515;">Kennedy et al. (2024)</a>;
+                        [h] <a href="https://www.nber.org/papers/w29485" target="_blank" style="color: #8C1515;">Curtis et al. (2022)</a>;
+                        [i] <a href="https://doi.org/10.1086/701357" target="_blank" style="color: #8C1515;">Giroud &amp; Rauh (2019)</a>;
+                        [j] <a href="https://academic.oup.com/rfs/article/36/12/4965/7152288" target="_blank" style="color: #8C1515;">Gómez-Cram &amp; Olbert (2023)</a>;
+                        [k] <a href="https://doi.org/10.1111/1475-679X.12269" target="_blank" style="color: #8C1515;">Lester (2019)</a>;
+                        [l] <a href="https://doi.org/10.1016/j.jacceco.2019.03.004" target="_blank" style="color: #8C1515;">Shevlin et al. (2019)</a>;
+                        [n] <a href="https://doi.org/10.2308/TAR-2019-0047" target="_blank" style="color: #8C1515;">Drake et al. (2022)</a>;
+                        [o] <a href="https://doi.org/10.2308/accr-52008" target="_blank" style="color: #8C1515;">Williams (2018)</a>;
+                        [p] <a href="https://doi.org/10.3386/w24850" target="_blank" style="color: #8C1515;">Suárez Serrato (2019)</a>;
+                        [q] <a href="https://doi.org/10.1257/aer.20130570" target="_blank" style="color: #8C1515;">Fuest et al. (2018)</a>;
+                        [r] <a href="https://www.sciencedirect.com/science/article/pii/S0929119921001620" target="_blank" style="color: #8C1515;">Jacob (2021)</a>;
+                        [s] <a href="https://www.sciencedirect.com/science/article/pii/S0929119922001183" target="_blank" style="color: #8C1515;">Jacob &amp; Vosseburger (2022)</a>;
+                        [t] <a href="https://doi.org/10.1111/j.1540-6261.2011.01651.x" target="_blank" style="color: #8C1515;">Dharmapala et al. (2011)</a>;
+                        [u] <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/1911-3846.12604" target="_blank" style="color: #8C1515;">Gaertner et al. (2020)</a>;
+                        [v] <a href="https://doi.org/10.1257/aer.20141702" target="_blank" style="color: #8C1515;">Suárez Serrato &amp; Zidar (2016)</a>;
+                        [w] <a href="https://www.brookings.edu/articles/effects-of-international-tax-provisions-on-domestic-labor-markets/" target="_blank" style="color: #8C1515;">Garrett et al. (2024)</a>;
+                        [y] <a href="https://www.sciencedirect.com/science/article/abs/pii/S0014292112000451" target="_blank" style="color: #8C1515;">Arulampalam et al. (2012)</a>;
+                        [z] <a href="https://ssrn.com/abstract=4255473" target="_blank" style="color: #8C1515;">Samuel (2022)</a>;
+                        [aa] <a href="https://doi.org/10.2308/TAR-2019-0148" target="_blank" style="color: #8C1515;">Lee et al. (2021)</a>;
+                        [ab] <a href="https://publications.aaahq.org/jata/article-abstract/46/2/81/12154/Sharing-the-Wealth-The-Effects-of-Announced-TCJA?redirectedFrom=fulltext" target="_blank" style="color: #8C1515;">Hutchens et al. (2024)</a>.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel A: Number of Employees (7 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-emp-a" placeholder="Filter table..." onkeyup="filterTable('table-emp-a', 'filter-emp-a')">
+                    <div class="overflow-scroll">
+                        <table id="table-emp-a">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Number of employees</td>
+                                    <td>Simple and directly interpretable magnitude</td>
+                                    <td>Lacks size adjustment</td>
+                                    <td>QCEW<sup>[a]</sup>, NETS, CRSP<sup>[a]</sup>, LBD<sup>[b]</sup>, IAB-LIAB<sup>[d]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Number of private-sector employees</td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>BEA-REA, QCEW<sup>[e]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Log(Domestic employees)</td>
+                                    <td>Reduces skew and stabilizes relative variation; enables multiplicative interpretation</td>
+                                    <td>Undefined for non-positive values; zeros need adjustment</td>
+                                    <td>IRS-1120<sup>[*],[f]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Log(Domestic employees)</td>
+                                    <td>See #3</td>
+                                    <td>See #3</td>
+                                    <td>IRS-1120+1040<sup>[*],[g]</sup>, NETS<sup>[h],[i]</sup>, LBD<sup>[b]</sup>, ORBIS<sup>[j],[k]</sup>, CBP<sup>[l]</sup>, BEA-MICRO, COMP<sup>[k]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Residual of expected foreign employees</td>
+                                    <td>Adjusts for scale and fundamentals</td>
+                                    <td>Not easily interpretable</td>
+                                    <td>10-K, COMP<sup>[n]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Number of offshored jobs</td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>DOL-TAA, COMP<sup>[o]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Growth rate of employment</td>
+                                    <td>Captures period-to-period changes</td>
+                                    <td>See #1</td>
+                                    <td>NETS<sup>[p]</sup>, ORBIS, SWE-ADMIN<sup>[s]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel B: Wage (18 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-emp-b" placeholder="Filter table..." onkeyup="filterTable('table-emp-b', 'filter-emp-b')">
+                    <div class="overflow-scroll">
+                        <table id="table-emp-b">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Log(Median full-time wage)</td>
+                                    <td>See #3</td>
+                                    <td>See #3</td>
+                                    <td>IAB-LIAB<sup>[q]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Compensation scaled by assets</td>
+                                    <td>Adjusts for size; improves cross-unit comparability</td>
+                                    <td>Sensitive to small/noisy denominators</td>
+                                    <td>ORBIS<sup>[k]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Growth of total wages (non-owners)</td>
+                                    <td>See #7</td>
+                                    <td>See #7</td>
+                                    <td>SWE-ADMIN<sup>[r]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Log(Staff costs)</td>
+                                    <td>See #3</td>
+                                    <td>See #3</td>
+                                    <td>ORBIS<sup>[s]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>US compensation / Assets<sub>t-1</sub></td>
+                                    <td>See #9</td>
+                                    <td>See #9</td>
+                                    <td>BEA-MICRO<sup>[*],[t]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>Actual - Expected Pension Contribution</td>
+                                    <td>See #1</td>
+                                    <td>See #1; proceeds/book mismatches may overstate negatives</td>
+                                    <td>COMP<sup>[u]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>County employees * Avg Annual Wage</td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>QCEW, NETS, CRSP<sup>[a]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>Avg annual wage per employee (county)</td>
+                                    <td>See #9</td>
+                                    <td>See #9</td>
+                                    <td>QCEW, NETS, CRSP<sup>[a]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td>Total payroll (county)</td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>LBD, QCEW<sup>[v]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>17</td>
+                                    <td>Total Payroll / Total Employment</td>
+                                    <td>See #9</td>
+                                    <td>See #9</td>
+                                    <td>LBD, QCEW<sup>[v]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td>Avg annual real wage per job</td>
+                                    <td>See #9</td>
+                                    <td>See #9</td>
+                                    <td>BEA-REA, QCEW<sup>[e]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>19</td>
+                                    <td>Log(Domestic compensation per employee)</td>
+                                    <td>See #3; see #9</td>
+                                    <td>See #3; see #9</td>
+                                    <td>IRS-1120<sup>[*],[w],[f]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>Log(Real wage per headcount)</td>
+                                    <td>See #3; see #9</td>
+                                    <td>See #3; see #9</td>
+                                    <td>AMADEUS<sup>[y]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>21</td>
+                                    <td>Avg log daily wage (full-time)</td>
+                                    <td>See #3; see #9</td>
+                                    <td>See #3; see #9</td>
+                                    <td>IAB-LIAB<sup>[d]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>22</td>
+                                    <td>Log(Total payroll)</td>
+                                    <td>See #3; see #9</td>
+                                    <td>See #3; see #9</td>
+                                    <td>IRS-1120+1040<sup>[*],[g]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>23</td>
+                                    <td>Log(Payroll per headcount)</td>
+                                    <td>See #3; see #9</td>
+                                    <td>See #3; see #9</td>
+                                    <td>IRS-1120+1040<sup>[*],[g]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>24</td>
+                                    <td>Log(Total wage expense)</td>
+                                    <td>See #1; see #9</td>
+                                    <td>See #3; see #9</td>
+                                    <td>ORBIS, QCEW<sup>[z]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>25</td>
+                                    <td>Average wages</td>
+                                    <td>See #1</td>
+                                    <td>See #1; see #9</td>
+                                    <td>IRS-W2-1099<sup>[*],[g],[d]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel C: Reputation & Employee Satisfaction (2 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-emp-c" placeholder="Filter table..." onkeyup="filterTable('table-emp-c', 'filter-emp-c')">
+                    <div class="overflow-scroll">
+                        <table id="table-emp-c">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>26</td>
+                                    <td>Median employee ratings</td>
+                                    <td>See #1</td>
+                                    <td>Selection bias</td>
+                                    <td>GLASSDOOR, LEXIS<sup>[aa]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>27</td>
+                                    <td>Annual avg of monthly satisfaction</td>
+                                    <td>See #1</td>
+                                    <td>See #1; see #9</td>
+                                    <td>CULTUREX, COMP<sup>[ab]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geographic View -->
+            <div id="outcome-geo" class="panel-view">
+                <button class="back-button" onclick="showExploreLanding()">Back to Outcomes</button>
+                <div class="section-header">
+                    <h2>Geographic Allocation Measures</h2>
+                    <p>Subsidiaries, Investment Flows, and Lockout Effects</p>
+                </div>
+
+                <div class="overview-box" style="margin-bottom: 1.5rem;">
+                    <h4>Legend</h4>
+                    <p><strong>Paper References:</strong>
+                        [a] <a href="https://doi.org/10.1016/j.jacceco.2015.01.003" target="_blank" style="color: #8C1515;">Dyreng et al. (2015)</a>;
+                        [b] <a href="https://doi.org/10.2308/accr-51420" target="_blank" style="color: #8C1515;">Dyreng &amp; Markle (2016)</a>;
+                        [c] <a href="https://doi.org/10.1016/j.jacceco.2018.08.008" target="_blank" style="color: #8C1515;">Harris &amp; O'Brien (2018)</a>;
+                        [d] <a href="https://doi.org/10.1016/j.respol.2020.104129" target="_blank" style="color: #8C1515;">Gaessler et al. (2021)</a>;
+                        [e] <a href="https://onlinelibrary.wiley.com/doi/10.1111/1911-3846.12140" target="_blank" style="color: #8C1515;">Edwards et al. (2016)</a>;
+                        [f] <a href="https://doi.org/10.1016/j.jfineco.2014.12.004" target="_blank" style="color: #8C1515;">Hanlon et al. (2015)</a>;
+                        [g] <a href="https://doi.org/10.1093/rfs/hhv005" target="_blank" style="color: #8C1515;">Arena &amp; Kutner (2015)</a>;
+                        [h] <a href="https://doi.org/10.1111/1475-679X.12269" target="_blank" style="color: #8C1515;">Lester (2019)</a>;
+                        [i] <a href="https://www.sciencedirect.com/science/article/pii/S0304405X07001390" target="_blank" style="color: #8C1515;">Foley et al. (2007)</a>;
+                        [j] <a href="https://doi.org/10.1093/rfs/hhy124" target="_blank" style="color: #8C1515;">De Simone et al. (2019)</a>;
+                        [k] <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1468135" target="_blank" style="color: #8C1515;">Blouin et al. (2012)</a>;
+                        [m] <a href="https://www.journals.uchicago.edu/doi/abs/10.17310/ntj.2010.4S.12" target="_blank" style="color: #8C1515;">Graham et al. (2010)</a>.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel A: Foreign Subsidiary Holdings (7 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-geo-a" placeholder="Filter table..." onkeyup="filterTable('table-geo-a', 'filter-geo-a')">
+                    <div class="overflow-scroll">
+                        <table id="table-geo-a">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Foreign equity holding company dummy</td>
+                                    <td>Simple and directly interpretable magnitude; bounded support</td>
+                                    <td>Loses information on intensity, size, and magnitude</td>
+                                    <td>ORBIS, COMP<sup>[a]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Count of tax haven subsidiaries</td>
+                                    <td>Simple and directly interpretable magnitude</td>
+                                    <td>Lacks size adjustment</td>
+                                    <td>COMP, ANN-REP<sup>[b]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>% of subsidiaries in tax havens</td>
+                                    <td>Adjusts for size; improves cross-unit comparability</td>
+                                    <td>Sensitive to small/noisy denominators</td>
+                                    <td>COMP, ANN-REP<sup>[b]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Δ(Haven Subs / Total Subs)</td>
+                                    <td>Captures period-to-period investment changes; adjusts for size; improves cross-unit comparability</td>
+                                    <td>See #3</td>
+                                    <td>COMP, ANN-REP<sup>[b]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Indicator for "dot" haven usage</td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>COMP, ANN-REP<sup>[b]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>"Double Irish" structure indicator</td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>SEC-EDGAR-21<sup>[c]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Number of EP patents transferred</td>
+                                    <td>See #2</td>
+                                    <td>See #2</td>
+                                    <td>EPO, MPI-PTD, PATSTAT<sup>[d]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Panel B: Capital Investment Flows and Lockout Effects (6 Measures)</h3>
+                    <input type="text" class="search-box" id="filter-geo-b" placeholder="Filter table..." onkeyup="filterTable('table-geo-b', 'filter-geo-b')">
+                    <div class="overflow-scroll">
+                        <table id="table-geo-b">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Measure</th>
+                                    <th>Pro(s)</th>
+                                    <th>Con(s)</th>
+                                    <th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Foreign-target cash acquisition indicator</td>
+                                    <td>See #1</td>
+                                    <td>See #1</td>
+                                    <td>SDC, SEC-8K, COMP, CRSP<sup>[e]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Foreign CapEx / Assets<sub>t-1</sub></td>
+                                    <td>See #3</td>
+                                    <td>See #3</td>
+                                    <td>COMP-GEO<sup>[f]</sup>, WSP<sup>[g]</sup>, COMP, BEA-DIA, 10-K<sup>[h]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Foreign Cash / Assets ("trapped cash")</td>
+                                    <td>See #3</td>
+                                    <td>See #3</td>
+                                    <td>COMP, BEA-DIA<sup>[i]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Excess Foreign Cash / Assets</td>
+                                    <td>See #3</td>
+                                    <td>See #3</td>
+                                    <td>COMP<sup>[j]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Repatriation Dividends / Assets</td>
+                                    <td>See #3; direct measure of capital flows to parent</td>
+                                    <td>See #3</td>
+                                    <td>BEA-DIA<sup>[k]</sup></td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>Survey-based lockout measures</td>
+                                    <td>Provides qualitative evidence directly from tax executives</td>
+                                    <td>Survey self-reporting biases; limited external validity</td>
+                                    <td>Proprietary survey<sup>[m]</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BROWSE DATA SOURCES TAB -->
+        <div id="browse" class="tab-content">
+            <!-- Landing View -->
+            <div id="browse-landing">
+                <div class="section-header">
+                    <h2>Browse Data Sources</h2>
+                    <p>Comprehensive information about <strong>49 unique data sources</strong> used in tax research. Select a panel below to view details.</p>
+                </div>
+
+                <div class="overview-box">
+                    <h4>Type Definitions:</h4>
+                    <ul>
+                        <li><span class="badge admin">Admin</span> Restricted administrative microdata (often requires US citizenship or special clearance)</li>
+                        <li><span class="badge public">Public</span> Freely available official source (open access)</li>
+                        <li><span class="badge private">Private</span> Proprietary/commercial license required (subscription-based)</li>
+                    </ul>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card" onclick="showPanel('panel-a')">
+                        <h3>Panel A: Firm Financial Data</h3>
+                        <p>7 sources including Compustat, Orbis, Worldscope, Amadeus</p>
+                    </div>
+                    <div class="card" onclick="showPanel('panel-b')">
+                        <h3>Panel B: M&A and Stock Market Data</h3>
+                        <p>4 sources including CRSP, SDC Platinum, ZEPHYR</p>
+                    </div>
+                    <div class="card" onclick="showPanel('panel-c')">
+                        <h3>Panel C: Employment and Establishment Data</h3>
+                        <p>8 sources including CBP, QCEW, LBD, ACES, Census of Manufactures</p>
+                    </div>
+                    <div class="card" onclick="showPanel('panel-d')">
+                        <h3>Panel D: Government Administrative Data</h3>
+                        <p>12 sources including IRS (1120, W-2, SOI), BEA, HMRC, CRA, SEC</p>
+                    </div>
+                    <div class="card" onclick="showPanel('panel-e')">
+                        <h3>Panel E: Other Establishment and Labor Data</h3>
+                        <p>3 sources: IAB-LIAB, NETS, DOL-TAA</p>
+                    </div>
+                    <div class="card" onclick="showPanel('panel-f')">
+                        <h3>Panel F: Patent and Innovation Data</h3>
+                        <p>7 sources including USPTO, PATSTAT, NBER, EPO, UVA-Darden</p>
+                    </div>
+                    <div class="card" onclick="showPanel('panel-g')">
+                        <h3>Panel G: International Investment Data</h3>
+                        <p>5 sources including BEA-DIA, CPIS, IBFD, Treasury TIC</p>
+                    </div>
+                    <div class="card" onclick="showPanel('panel-h')">
+                        <h3>Panel H: Employee Sentiment and News Data</h3>
+                        <p>3 sources: Glassdoor, Culture X, LexisNexis</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel Views -->
+            <div id="panel-a" class="panel-view">
+                <button class="back-button" onclick="showBrowseLanding()">Back to Data Sources</button>
+                <div class="section-header">
+                    <h2>Panel A: Firm Financial Data</h2>
+                </div>
+                <input type="text" class="search-box" id="filter-a" placeholder="Filter table..." onkeyup="filterTable('table-a', 'filter-a')">
+                <div class="overflow-scroll">
+                    <table id="table-a">
+                        <thead>
+                            <tr>
+                                <th>Data Source</th>
+                                <th>Abbrev.</th>
+                                <th>Type</th>
+                                <th>Coverage</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Amadeus</td>
+                                <td><strong>AMADEUS</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>European Public & Private Firms</td>
+                                <td>Harmonized European financial data using standardized formats; covers both listed and unlisted European companies</td>
+                                <td>Expensive; data quality varies significantly across countries; sparse coverage in some regions</td>
+                            </tr>
+                            <tr>
+                                <td>Annual Report Subsidiary Lists</td>
+                                <td><strong>ANN-REP</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>Various Companies</td>
+                                <td>Detailed subsidiary ownership structures and geographic presence; official company disclosures</td>
+                                <td>Manual collection and parsing required; inconsistent reporting standards across firms; potential for strategic omissions</td>
+                            </tr>
+                            <tr>
+                                <td>Compustat</td>
+                                <td><strong>COMP</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>North America (US & Canada) Public Firms</td>
+                                <td>Standardized accounting variables enable cross-firm comparisons; long historical coverage back decades; excellent coverage of large US public firms</td>
+                                <td>Expensive; accounting standard changes (GAAP/IFRS) create time series breaks; limited to public companies only</td>
+                            </tr>
+                            <tr>
+                                <td>Compustat Geographic Segment Files</td>
+                                <td><strong>COMP-GEO</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>North America Public Firms (Geographic Segments)</td>
+                                <td>Provides geographic breakdown of firm operations including foreign and domestic CapEx; enables study of multinational firm allocation decisions</td>
+                                <td>Part of broader Compustat subscription; geographic reporting requirements may create incomplete coverage; firms may aggregate segments strategically</td>
+                            </tr>
+                            <tr>
+                                <td>Orbis</td>
+                                <td><strong>ORBIS</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>Global Public & Private Firms</td>
+                                <td>Global coverage of both public and private companies; includes ownership trees showing parent-subsidiary relationships; valuable for multinational firm studies</td>
+                                <td>Expensive; data quality varies significantly across countries; sparse coverage in some regions</td>
+                            </tr>
+                            <tr>
+                                <td>SEC 10-K Annual Reports</td>
+                                <td><strong>10-K</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>US Public Firms</td>
+                                <td>Comprehensive annual financial statements and business descriptions; free public access via EDGAR; standardized format</td>
+                                <td>Manual extraction required for non-standardized data; text-heavy documents require parsing; filing delays</td>
+                            </tr>
+                            <tr>
+                                <td>Worldscope</td>
+                                <td><strong>WSP</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>Global Public Firms</td>
+                                <td>Global accounting fundamentals for international companies; good for cross-country comparative studies</td>
+                                <td>Expensive; limited replicability; uneven country coverage; variable data quality in emerging markets; inconsistent accounting standards across firms</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="panel-b" class="panel-view">
+                <button class="back-button" onclick="showBrowseLanding()">Back to Data Sources</button>
+                <div class="section-header">
+                    <h2>Panel B: M&A and Stock Market Data</h2>
+                </div>
+                <input type="text" class="search-box" id="filter-b" placeholder="Filter table..." onkeyup="filterTable('table-b', 'filter-b')">
+                <div class="overflow-scroll">
+                    <table id="table-b">
+                        <thead>
+                            <tr>
+                                <th>Data Source</th>
+                                <th>Abbrev.</th>
+                                <th>Type</th>
+                                <th>Coverage</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CRSP</td>
+                                <td><strong>CRSP</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>US Stock Market (NYSE, AMEX, NASDAQ)</td>
+                                <td>Comprehensive US stock returns since 1926 with clean corporate action adjustments; widely accepted academic standard</td>
+                                <td>Returns are upward biased in any month where there are multiple distributions on the same day; monthly returns table often does not contain monthly returns for several months before the merger</td>
+                            </tr>
+                            <tr>
+                                <td>NYSE/AMEX Deletions</td>
+                                <td><strong>NYSE-AMEX-DEL</strong></td>
+                                <td><span class="badge private">Private (constructed)</span></td>
+                                <td>US Delistings/Deletions</td>
+                                <td>Clean event study samples by identifying specific exit reasons; reduces survivorship bias in analyses</td>
+                                <td>Requires significant data construction work; classification choices affect results</td>
+                            </tr>
+                            <tr>
+                                <td>Orbis M&A (ZEPHYR)</td>
+                                <td><strong>ZEPHYR</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>Global M&A Transactions</td>
+                                <td>Detailed M&A deal information including values, dates, and company characteristics; good global coverage of major transactions</td>
+                                <td>Issues related to the continuous overwriting of firm-level data and inaccuracies in announcement dates</td>
+                            </tr>
+                            <tr>
+                                <td>SDC Platinum</td>
+                                <td><strong>SDC</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>Global M&A Transactions</td>
+                                <td>Long historical coverage back to 1970s; considered gold standard for M&A deal databases; detailed participant information</td>
+                                <td>Expensive; limited replicability for academic research; data coverage can be inconsistent across countries and time; event classifications sometimes ambiguous or error-prone</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="panel-c" class="panel-view">
+                <button class="back-button" onclick="showBrowseLanding()">Back to Data Sources</button>
+                <div class="section-header">
+                    <h2>Panel C: Employment and Establishment Data</h2>
+                </div>
+                <input type="text" class="search-box" id="filter-c" placeholder="Filter table..." onkeyup="filterTable('table-c', 'filter-c')">
+                <div class="overflow-scroll">
+                    <table id="table-c">
+                        <thead>
+                            <tr>
+                                <th>Data Source</th>
+                                <th>Abbrev.</th>
+                                <th>Type</th>
+                                <th>Coverage</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Annual Capital Expenditures Survey</td>
+                                <td><strong>ACES</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>US Capital Investment by Establishment</td>
+                                <td>Detailed capital investment by establishment and asset type; separates structures from equipment</td>
+                                <td>Residency requirement; highly restricted access; strict disclosure rules; limited sample sizes for detailed breakdowns</td>
+                            </tr>
+                            <tr>
+                                <td>Annual Survey of Manufactures</td>
+                                <td><strong>ASM</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>US Manufacturing Plants (Annual)</td>
+                                <td>Annual manufacturing plant data between economic censuses; consistent definitions with Census of Manufactures</td>
+                                <td>Residency requirement; rotating sample coverage, not universe; restricted access; disclosure review required</td>
+                            </tr>
+                            <tr>
+                                <td>Census of Manufactures</td>
+                                <td><strong>CM</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>US Manufacturing Plants</td>
+                                <td>Detailed plant-level production, materials, and energy data for manufacturing; comprehensive coverage every 5 years</td>
+                                <td>Residency requirement; conducted only periodically (5-year intervals); restricted RDC access; long publication lags</td>
+                            </tr>
+                            <tr>
+                                <td>County Business Patterns</td>
+                                <td><strong>CBP</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>US Establishments & Employment</td>
+                                <td>Annual subnational economic data by industry at county level; includes employment and payroll by establishment size; free public access</td>
+                                <td>Suppressed for confidentiality in small geographies; excludes some industries; limited firm-level detail</td>
+                            </tr>
+                            <tr>
+                                <td>Longitudinal Business Database</td>
+                                <td><strong>LBD</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>US Business Dynamics (Census)</td>
+                                <td>Universe of US establishments with longitudinal links; comprehensive employment, payroll, and industry data</td>
+                                <td>Residency requirement; access restricted to Census Research Data Centers (RDCs); strict disclosure rules limit publishable results</td>
+                            </tr>
+                            <tr>
+                                <td>National Establishment Time-Series</td>
+                                <td><strong>NETS</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>US Establishment Dynamics</td>
+                                <td>Long-run establishment panel tracking moves, closures, and ownership changes; covers small businesses missed elsewhere</td>
+                                <td>Expensive; vendor-curated with proprietary methods; inconsistent data quality</td>
+                            </tr>
+                            <tr>
+                                <td>Quarterly Census of Employment & Wages</td>
+                                <td><strong>QCEW</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>US Employment & Wages</td>
+                                <td>Near-census coverage of US jobs with quarterly employment and wage data; free public access; consistent methodology over time</td>
+                                <td>Geographic and industry detail suppressed for confidentiality; industry reclassifications complicate long-term analysis; no firm-level or worker-level information</td>
+                            </tr>
+                            <tr>
+                                <td>Quarterly Workforce Indicators</td>
+                                <td><strong>QWI</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>US Job Flows & Worker Demographics</td>
+                                <td>Job flows and worker demographics (age, sex, race) with turnover rates; publicly available without restrictions</td>
+                                <td>Data "noise infused" for confidentiality, reducing precision; incomplete state coverage; complex methodology</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="panel-d" class="panel-view">
+                <button class="back-button" onclick="showBrowseLanding()">Back to Data Sources</button>
+                <div class="section-header">
+                    <h2>Panel D: Government Administrative Data</h2>
+                </div>
+                <input type="text" class="search-box" id="filter-d" placeholder="Filter table..." onkeyup="filterTable('table-d', 'filter-d')">
+                <div class="overflow-scroll">
+                    <table id="table-d">
+                        <thead>
+                            <tr>
+                                <th>Data Source</th>
+                                <th>Abbrev.</th>
+                                <th>Type</th>
+                                <th>Coverage</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BEA Firm-level Microdata</td>
+                                <td><strong>BEA-MICRO</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>US Multinational Activities</td>
+                                <td>Detailed multinational enterprise data including foreign affiliate operations; official government source with comprehensive coverage</td>
+                                <td>US citizens only; requires security clearance; extremely strict publication restrictions; respondents subject to reporting thresholds that vary over time</td>
+                            </tr>
+                            <tr>
+                                <td>BEA Regional Economic Accounts</td>
+                                <td><strong>BEA-REA</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>US Regional GDP, Employment, Income</td>
+                                <td>Comprehensive regional GDP, employment, and income data; free public access with long time series</td>
+                                <td>Aggregated data only (no firm detail); frequent revisions change historical trends; complex methodology; respondents subject to reporting thresholds that vary over time</td>
+                            </tr>
+                            <tr>
+                                <td>Canada Revenue Agency</td>
+                                <td><strong>CRA</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>Canadian Tax Records</td>
+                                <td>Canadian corporate tax data with detailed financial information; comprehensive coverage of Canadian corporations</td>
+                                <td>Restricted access; requires research approval; Canada-only coverage; tax vs. book accounting differences</td>
+                            </tr>
+                            <tr>
+                                <td>Chinese State Administration of Tax</td>
+                                <td><strong>CHINA-TAX</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>Chinese Corporate Tax Records</td>
+                                <td>Comprehensive Chinese corporate tax records; large sample of Chinese firms</td>
+                                <td>Restricted access; requires government partnerships; China-only coverage; language barriers</td>
+                            </tr>
+                            <tr>
+                                <td>Her Majesty's Revenue and Customs</td>
+                                <td><strong>HMRC</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>UK Tax Records</td>
+                                <td>UK corporate tax and financial data; official government source for British firms</td>
+                                <td>Restricted access; requires approval process; UK-only coverage; complex application procedures</td>
+                            </tr>
+                            <tr>
+                                <td>IRS Corporate Tax Returns</td>
+                                <td><strong>IRS-1120</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>US Corporate Tax Filings</td>
+                                <td>Complete universe of corporate tax returns; includes all corporations regardless of size or public status</td>
+                                <td>Highly restricted access requiring IRS approval; tax vs. book accounting differences; strict confidentiality rules; requires US citizenship</td>
+                            </tr>
+                            <tr>
+                                <td>IRS Corporate+Individual Returns</td>
+                                <td><strong>IRS-1120+1040</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>US Corporate & Individual Tax Filings</td>
+                                <td>Links corporate returns to individual owners; enables study of pass-through entities and owner characteristics</td>
+                                <td>Highly restricted access requiring IRS approval; tax vs. book accounting differences; strict confidentiality rules; requires US citizenship</td>
+                            </tr>
+                            <tr>
+                                <td>IRS SOI (Form 4562)</td>
+                                <td><strong>IRS-SOI-4562</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>US Tax-based Capital Expenditures</td>
+                                <td>Universe coverage of tax-based capital expenditures from depreciation schedules; precise investment timing</td>
+                                <td>Highly restricted access requiring IRS approval; tax vs. book accounting differences; strict confidentiality rules; requires US citizenship</td>
+                            </tr>
+                            <tr>
+                                <td>IRS W-2 & 1099</td>
+                                <td><strong>IRS-W2-1099</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>US Worker-level Earnings</td>
+                                <td>Worker-level earnings from tax records; near-universal US employment coverage; job-to-job transitions</td>
+                                <td>Highly restricted access requiring IRS approval; tax vs. book accounting differences; strict confidentiality rules; requires US citizenship</td>
+                            </tr>
+                            <tr>
+                                <td>SEC 8-K Current Reports</td>
+                                <td><strong>SEC-8K</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>US Material Corporate Events</td>
+                                <td>Timely disclosure of material corporate events including M&A announcements; free public access</td>
+                                <td>Event-driven filings may be incomplete; requires text parsing; variable disclosure quality</td>
+                            </tr>
+                            <tr>
+                                <td>SEC EDGAR Exhibit 21</td>
+                                <td><strong>SEC-EDGAR-21</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>US Subsidiary Ownership Structures</td>
+                                <td>Detailed subsidiary ownership structures from 10-K filings; free public access via EDGAR</td>
+                                <td>Manual extraction required; firms may strategically omit subsidiaries; annual frequency only</td>
+                            </tr>
+                            <tr>
+                                <td>Swedish Administrative Tax Data</td>
+                                <td><strong>SWE-ADMIN</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>Swedish Tax Records</td>
+                                <td>Rich owner-firm linkage data from tax records; high-quality Nordic administrative data</td>
+                                <td>Restricted to approved researchers; Sweden-only coverage; requires understanding of Swedish institutions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="panel-e" class="panel-view">
+                <button class="back-button" onclick="showBrowseLanding()">Back to Data Sources</button>
+                <div class="section-header">
+                    <h2>Panel E: Other Establishment and Labor Data</h2>
+                </div>
+                <input type="text" class="search-box" id="filter-e" placeholder="Filter table..." onkeyup="filterTable('table-e', 'filter-e')">
+                <div class="overflow-scroll">
+                    <table id="table-e">
+                        <thead>
+                            <tr>
+                                <th>Data Source</th>
+                                <th>Abbrev.</th>
+                                <th>Type</th>
+                                <th>Coverage</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>German Linked Employer–Employee Data</td>
+                                <td><strong>IAB-LIAB</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>German Linked Employer-Employee Data</td>
+                                <td>High-quality linked employer-employee data covering most German workforce; includes wages and firm characteristics</td>
+                                <td>Restricted researcher access; Germany-only coverage; requires German language skills</td>
+                            </tr>
+                            <tr>
+                                <td>National Establishment Time-Series</td>
+                                <td><strong>NETS</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>US Establishment Dynamics</td>
+                                <td>Long-run establishment panel tracking moves, closures, and ownership changes; covers small businesses missed elsewhere</td>
+                                <td>Expensive; vendor-curated with proprietary methods; inconsistent data quality</td>
+                            </tr>
+                            <tr>
+                                <td>US Department of Labor Trade Adjustment Assistance Program</td>
+                                <td><strong>DOL-TAA</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>US Layoffs due to Trade/Outsourcing</td>
+                                <td>Identifies trade-related mass layoffs with firm and worker information; free public access</td>
+                                <td>Selection bias from application process; may not reflect true trade impact; limited historical coverage</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="panel-f" class="panel-view">
+                <button class="back-button" onclick="showBrowseLanding()">Back to Data Sources</button>
+                <div class="section-header">
+                    <h2>Panel F: Patent and Innovation Data</h2>
+                </div>
+                <input type="text" class="search-box" id="filter-f" placeholder="Filter table..." onkeyup="filterTable('table-f', 'filter-f')">
+                <div class="overflow-scroll">
+                    <table id="table-f">
+                        <thead>
+                            <tr>
+                                <th>Data Source</th>
+                                <th>Abbrev.</th>
+                                <th>Type</th>
+                                <th>Coverage</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>European Patent Office Patent Register</td>
+                                <td><strong>EPO</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>European Patents</td>
+                                <td>Official European patent data with comprehensive coverage of EP patents; includes patent transfer records</td>
+                                <td>Limited to European patents; requires technical expertise to navigate; patent family relationships can be complex</td>
+                            </tr>
+                            <tr>
+                                <td>Google Patents</td>
+                                <td><strong>G-PAT</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>Global Patents</td>
+                                <td>Easy-to-use search interface with basic analytics; free access with no registration</td>
+                                <td>Not official database; Google Patents ingests records from multiple patent offices, but the completeness, update frequency, and metadata standardization can vary. Some filings, especially older or international ones, may be missing or incomplete</td>
+                            </tr>
+                            <tr>
+                                <td>Max Planck Institute Patent Transfer Database</td>
+                                <td><strong>MPI-PTD</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>Patent Transfers</td>
+                                <td>Specialized database tracking patent transfers and ownership changes; enables study of patent mobility</td>
+                                <td>Limited coverage period; complex methodology for identifying transfers; requires understanding of patent law</td>
+                            </tr>
+                            <tr>
+                                <td>NBER Patent Data Project</td>
+                                <td><strong>NBER-PAT</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>US Patents (Historical)</td>
+                                <td>Cleaned USPTO data with citation links and disambiguated names; widely used by researchers; free access</td>
+                                <td>Updates lag USPTO by several years; coverage ends around 2006; methodological choices may not suit all uses</td>
+                            </tr>
+                            <tr>
+                                <td>PATSTAT</td>
+                                <td><strong>PATSTAT</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>Global Patents (EPO)</td>
+                                <td>Global patent coverage from multiple offices worldwide; includes patent families and international citations</td>
+                                <td>Expensive; complex database requiring technical expertise; computationally intensive processing</td>
+                            </tr>
+                            <tr>
+                                <td>US Patent & Trademark Office</td>
+                                <td><strong>USPTO</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>US Patents</td>
+                                <td>Official source of all US patents and applications; includes full text and inventor information; free public access</td>
+                                <td>Extensive name disambiguation required; complex data structure; US patents only</td>
+                            </tr>
+                            <tr>
+                                <td>UVA Darden Patent Dataset</td>
+                                <td><strong>UVA-DARDEN</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>US Patents Matched to Public Firms</td>
+                                <td>Curated patent portfolios matched to public firms; ready-to-use for corporate finance research</td>
+                                <td>Patents awarded only by the US Patent and Trademark Office (USPTO), between 1980 and 2017 to publicly listed firms internationally</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="panel-g" class="panel-view">
+                <button class="back-button" onclick="showBrowseLanding()">Back to Data Sources</button>
+                <div class="section-header">
+                    <h2>Panel G: International Investment Data</h2>
+                </div>
+                <input type="text" class="search-box" id="filter-g" placeholder="Filter table..." onkeyup="filterTable('table-g', 'filter-g')">
+                <div class="overflow-scroll">
+                    <table id="table-g">
+                        <thead>
+                            <tr>
+                                <th>Data Source</th>
+                                <th>Abbrev.</th>
+                                <th>Type</th>
+                                <th>Coverage</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bureau of Economic Analysis Direct Investment Abroad</td>
+                                <td><strong>BEA-DIA</strong></td>
+                                <td><span class="badge admin">Admin</span></td>
+                                <td>US Outbound Investment</td>
+                                <td>Official US data on multinational enterprise operations abroad; includes detailed foreign affiliate financial data</td>
+                                <td>US citizens only; requires security clearance; strict publication restrictions; reporting thresholds vary over time</td>
+                            </tr>
+                            <tr>
+                                <td>Coordinated Portfolio Investment Survey</td>
+                                <td><strong>CPIS</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>Global Portfolio Investment</td>
+                                <td>Standardized cross-country portfolio investment data; enables international comparisons; free access</td>
+                                <td>Countries use different methodologies despite common framework; data quality varies by reporter</td>
+                            </tr>
+                            <tr>
+                                <td>Deloitte Tax Treaties Database</td>
+                                <td><strong>DELOITTE-TT</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>Global Tax Treaties</td>
+                                <td>Practitioner-oriented treaty summaries; includes implementation guidance; regular updates</td>
+                                <td>Coverage can lag behind official treaty updates, and details are often presented as practitioner summaries rather than verbatim legal texts</td>
+                            </tr>
+                            <tr>
+                                <td>International Bureau of Fiscal Documentation</td>
+                                <td><strong>IBFD</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>Global Tax Information</td>
+                                <td>Authoritative tax treaty texts and international tax law; comprehensive global coverage; expert analysis</td>
+                                <td>Expensive; subscription-locked, and not easily replicable for other researchers. Its content is curated summaries of tax law rather than always the raw primary sources, which can introduce interpretation bias. The database is also geared toward legal practitioners, so it's not machine-ready for large-scale quantitative analysis</td>
+                            </tr>
+                            <tr>
+                                <td>Treasury International Capital System</td>
+                                <td><strong>TIC</strong></td>
+                                <td><span class="badge public">Public</span></td>
+                                <td>US Cross-border Financial Flows</td>
+                                <td>Official cross-border financial flow data involving US entities; long time series; free public access</td>
+                                <td>Highly aggregated with no firm-level detail; frequent historical revisions; complex reporting may affect quality</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="panel-h" class="panel-view">
+                <button class="back-button" onclick="showBrowseLanding()">Back to Data Sources</button>
+                <div class="section-header">
+                    <h2>Panel H: Employee Sentiment and News Data</h2>
+                </div>
+                <input type="text" class="search-box" id="filter-h" placeholder="Filter table..." onkeyup="filterTable('table-h', 'filter-h')">
+                <div class="overflow-scroll">
+                    <table id="table-h">
+                        <thead>
+                            <tr>
+                                <th>Data Source</th>
+                                <th>Abbrev.</th>
+                                <th>Type</th>
+                                <th>Coverage</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Glassdoor by Culture X</td>
+                                <td><strong>CULTUREX</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>Employee Satisfaction Indices</td>
+                                <td>Curated employee satisfaction indices using advanced analytics; claims to reduce noise from raw reviews</td>
+                                <td>Expensive; proprietary black-box methodology; difficult to understand index drivers; limited research applications</td>
+                            </tr>
+                            <tr>
+                                <td>Glassdoor Ratings</td>
+                                <td><strong>GLASSDOOR</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>Employee Reviews & Salaries</td>
+                                <td>Large-scale employee reviews and company ratings; includes salary data and interview experiences</td>
+                                <td>Expensive; strong selection bias toward disgruntled employees; potential for company manipulation</td>
+                            </tr>
+                            <tr>
+                                <td>LexisNexis News</td>
+                                <td><strong>LEXIS</strong></td>
+                                <td><span class="badge private">Private</span></td>
+                                <td>Global News & Legal</td>
+                                <td>Comprehensive news and business information from thousands of global sources; searchable full text archives</td>
+                                <td>Expensive; requires extensive deduplication work; search algorithms may miss relevant content</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEARCH MEASURES TAB -->
+        <div id="search" class="tab-content">
+            <div class="section-header">
+                <h2>Search Measures</h2>
+                <p>Advanced search functionality for finding specific measures</p>
+            </div>
+
+            <input type="text" class="search-box" placeholder="Search by keyword, data source, citation, or measurement properties..." onkeyup="searchMeasures(this.value)">
+
+            <div class="overview-box">
+                <h4>Search Options:</h4>
+                <ul>
+                    <li><strong>By Keyword:</strong> Search measure descriptions</li>
+                    <li><strong>By Data Source:</strong> See all measures available from a particular dataset</li>
+                    <li><strong>By Citation:</strong> Find measures used in specific papers</li>
+                    <li><strong>By Pros/Cons:</strong> Search based on measurement properties</li>
+                </ul>
+            </div>
+
+            <div id="search-results" style="margin-top: 2rem;">
+                <p style="color: #666; text-align: center; padding: 2rem;">
+                    <em>Enter a search term to find relevant measures...</em>
+                </p>
+            </div>
+        </div>
+
+        <!-- GLOSSARY TAB -->
+        <div id="glossary" class="tab-content">
+            <div class="section-header">
+                <h2>Glossary of Terms</h2>
+                <p>Definitions of key financial and economic terms used in this resource</p>
+            </div>
+
+            <input type="text" class="search-box" id="glossary-filter" placeholder="Filter terms..." onkeyup="filterGlossary()">
+
+            <div class="accordion" id="glossary-list">
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Acquisition Premium
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> The difference between the price paid to acquire a target company and its pre-announcement market value. It represents the additional amount an acquirer is willing to pay above the target's standalone value.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Used to assess whether tax considerations affect the pricing of M&A transactions.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Administrative Data / Microdata
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Data collected by government agencies for administrative purposes (tax collection, program administration, regulation) rather than for statistical research. Microdata refers to individual-level or firm-level records, as opposed to aggregated statistics. Sources marked with [*] in this resource require special access.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Provides near-universe coverage and precise measurement but typically requires citizenship requirements, security clearances, and disclosure review before publication.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Buy-and-Hold Abnormal Return (BHAR)
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> The difference between the return from holding a stock over a specified period and the return from a benchmark (such as a market index or matched firm). Unlike CAR, BHAR compounds returns over time, making it suitable for measuring long-term performance.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Used to evaluate post-acquisition performance over extended periods (e.g., 24 months or 3 years).</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Capital Expenditures (CapEx)
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Funds used by a company to acquire, upgrade, and maintain physical assets such as property, plants, buildings, technology, or equipment. CapEx is often used to undertake new projects or investments by a company.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Often used as a measure of real investment response to tax incentives.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Capital Stock
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> The total value of a firm's or economy's accumulated physical capital—buildings, machinery, equipment, and other durable goods used in production. Capital stock is typically measured at replacement cost or book value and evolves as new investment adds to the stock while depreciation subtracts from it.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Used as a denominator to scale investment flows, creating investment rates comparable across firms or industries of different sizes.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Citation-weighted Patent Counts
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> A measure of innovation output that weights each patent by the number of citations it receives from subsequent patents. This approach gives greater weight to patents that are more influential or technologically important.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Used as a quality-adjusted proxy for innovation output, addressing the limitation that raw patent counts treat all patents as equally valuable.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Cumulative Abnormal Return (CAR)
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> The sum of all abnormal returns over a specified time period, where abnormal return is the difference between actual stock return and expected return. It measures the total impact of an event on a stock's price.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Used to measure short-window market reactions to M&A announcements (e.g., 3-day CAR).</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Depreciation / D&A
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Depreciation is the systematic allocation of the cost of a tangible asset over its useful life. D&A (Depreciation and Amortization) also includes amortization, which applies the same concept to intangible assets.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Added back to changes in net assets to approximate gross investment, since depreciation reduces book value but does not represent a cash outflow.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Disclosure Review
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> A process required by statistical agencies (e.g., Census Bureau, IRS) before research outputs can be released publicly. Reviewers check that results do not reveal information about individual respondents, applying rules on minimum cell sizes, dominance, and complementary disclosure.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Limits what researchers can publish from administrative data; may require aggregation or suppression of detailed results.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Double Irish Structure
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> A tax planning arrangement that exploited differences between Irish and U.S. tax rules by using two Irish subsidiaries—one tax resident in Ireland and one tax resident in a low-tax jurisdiction—to shift profits and minimize global tax liability. Ireland closed this structure to new entrants in 2015.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Used as an indicator variable to identify firms employing aggressive international tax planning strategies.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Employment
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> In tax research, employment refers to the level, growth, and composition of a firm's workforce, as well as worker compensation. Employment outcomes are studied as "real" effects of tax policy because they represent changes in firms' allocation of resources to labor inputs.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Tax policy affects employment indirectly through its impact on investment (via labor-capital complementarity or substitutability) and through tax incidence effects on wages. Common measures include headcount, payroll, wage levels, and employment growth rates.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Excess Foreign Cash
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Foreign cash holdings that exceed the amount needed for normal overseas operations. It represents accumulated foreign earnings retained abroad beyond operational requirements, often due to tax considerations related to repatriation.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Measured as foreign cash scaled by assets, used to study the extent to which repatriation taxes create distortions in capital allocation beyond the "trapped cash" concept.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Fixed Assets / Net Fixed Assets (NFA)
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Fixed assets are long-term tangible assets used in operations, such as land, buildings, and equipment. Net Fixed Assets (NFA) equals gross fixed assets minus accumulated depreciation, representing the remaining book value of these assets.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Changes in NFA, combined with depreciation add-backs, are used to construct investment measures.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Forward Citations
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> The number of times a patent is cited by subsequent patents. Forward citations serve as a quality-weighted measure of a patent's technological importance and influence.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Used to measure innovation quality, with non-self-citations (citations from other firms) often preferred to avoid bias from self-referencing.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        GAAP / IFRS
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Generally Accepted Accounting Principles (GAAP) are U.S. accounting standards set by FASB. International Financial Reporting Standards (IFRS) are global standards set by the IASB, used in over 140 countries. The two frameworks differ in areas like revenue recognition, inventory accounting, and lease treatment.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Differences between GAAP and IFRS can create measurement challenges when comparing firms across countries or when accounting standards change over time.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Headcount
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> The total number of employees at a firm or establishment, typically measured as full-time equivalents (FTEs) or total persons employed. Headcount provides a straightforward measure of labor input that is comparable across firms and over time.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Used as a denominator to calculate per-employee metrics (e.g., payroll per headcount, compensation per employee) and as a direct measure of employment levels in studies of tax incidence on labor.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Initial Public Offering (IPO)
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> The first sale of stock by a private company to the public. After an IPO, the company's shares trade on a public stock exchange, subjecting the firm to disclosure requirements and providing access to public capital markets.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> IPO timing can affect innovation measurement; post-IPO patent counts are used to study how going public affects innovation incentives.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Intangible Assets
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Non-physical assets such as patents, trademarks, copyrights, and goodwill. They are critical for innovation but often harder to value than physical assets. Only a subset of intangibles appear on the balance sheet (typically acquired intangibles), while internally developed intangibles are usually expensed.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Relevant when distinguishing tangible investment from total investment; IP transfers to low-tax jurisdictions are a key focus in profit-shifting research.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Investment
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> In the context of tax research on real effects, investment refers to firms' expenditures on productive capital assets, including tangible assets (property, plant, and equipment) and intangible assets (R&D, patents). The neoclassical theory of investment predicts that corporate taxes affect investment through changes in the after-tax cost of capital.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Investment is the primary "real" outcome studied in tax research. Common measures include capital expenditures (CapEx), changes in fixed assets, and investment ratios scaled by assets or prior-period capital stock. Tax depreciation rules and corporate income tax rates directly affect investment incentives.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Linked Employer-Employee Data
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Administrative datasets that match information about individual workers (wages, demographics, job history) to information about their employers (industry, size, financials). Examples include Germany's IAB-LIAB and matched IRS W-2 data in the U.S.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Enables studying how corporate tax changes affect worker outcomes like wages and employment, while controlling for both worker and firm characteristics.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Lockout Effect / Trapped Cash
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Under a worldwide tax system (pre-2018 U.S. law), the phenomenon where U.S. multinationals held foreign earnings abroad to defer U.S. tax on repatriation. "Trapped cash" refers to the foreign cash holdings that firms were reluctant to bring home due to the associated tax cost.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Measured as foreign cash scaled by total assets; used to study how repatriation taxes affect capital allocation and investment location decisions.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Log Transformation
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> A mathematical transformation that replaces a variable with its natural logarithm. Log transformations reduce right-skewness in distributions (common for firm size, investment, and patent counts), stabilize variance, and allow regression coefficients to be interpreted as percentage changes.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Commonly applied to investment, employment, and R&D measures. A limitation is that log is undefined for zero or negative values, requiring adjustments like log(1+x) which can introduce bias.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Mergers & Acquisitions (M&A)
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Transactions in which the ownership of companies or their operating units are transferred or consolidated. A merger combines two firms into one, while an acquisition involves one company purchasing another.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Tax considerations can influence M&A activity through deal structure (taxable vs. tax-free), target selection, and financing choices.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Multinational Enterprise (MNE)
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> A corporation that owns or controls production of goods or services in at least one country other than its home country. MNEs operate through foreign subsidiaries, branches, or affiliates and face tax obligations in multiple jurisdictions.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Central to studying profit shifting, transfer pricing, and the real effects of international tax rules on investment location decisions.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Non-self-citations
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Citations to a patent from patents held by different firms or inventors. Non-self-citations exclude citations from the same patent holder's other patents, focusing on external recognition of an invention's influence.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Used as a quality measure for innovation output that avoids the bias introduced when firms cite their own prior work. Often measured over a fixed forward window (e.g., 3 years ahead).</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Patent Applications vs. Patent Grants
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Patent applications are filings submitted to a patent office requesting protection for an invention. Patent grants are applications that have been approved after examination. Applications reflect innovation inputs closer to when R&D occurs, while grants confirm the invention met patentability standards.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Applications capture innovation timing more precisely; grants provide a quality screen but introduce lag.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Patent Families
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> A set of patents filed in multiple countries that protect the same invention. Patent families arise when inventors seek protection in multiple jurisdictions, with each national filing considered part of the same "family" linked by priority claims.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Using patent families rather than individual patents avoids double-counting the same invention filed in multiple countries.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Patent Transfers
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> The reassignment of patent ownership from one entity to another, either within a corporate group (e.g., from parent to subsidiary) or between unrelated parties. Patent transfers can occur through sale, licensing arrangements, or corporate restructuring.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Used to study how firms relocate intellectual property across jurisdictions, often to low-tax locations. The number of EP (European) patents transferred across countries is a key measure in profit-shifting research.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Payroll / Total Payroll
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> The aggregate wages and salaries paid to all employees of a firm or establishment over a given period. Total payroll represents the firm's labor cost and can be measured at the firm, establishment, or geographic (e.g., county) level.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Used as a measure of labor compensation in studies of tax incidence on workers. When scaled by headcount, payroll provides average wage measures comparable across firms.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        PP&E (Property, Plant & Equipment)
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Long-term tangible assets used in the production of goods and services, including land, buildings, machinery, and equipment. PP&E appears on the balance sheet at historical cost less accumulated depreciation.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Commonly used as a denominator to scale capital expenditures, creating an investment rate that is comparable across firms of different sizes.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Repatriation
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> The process of returning foreign-earned profits or financial assets back to the company's home country, typically through dividends from foreign subsidiaries to the parent company.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Repatriation dividends scaled by assets measure capital flows back to the parent; central to studying lockout effects and the 2017 Tax Cuts and Jobs Act transition tax.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Research and Development (R&D)
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Activities that companies undertake to innovate and introduce new products and services. R&D expenditures include wages for researchers, materials, and overhead costs directly related to innovation efforts.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> A key measure of innovation investment; R&D intensity (R&D/Sales) and R&D scaled by assets are common outcome variables in studies of R&D tax credits.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        R&D Intensity
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> A ratio measuring a firm's R&D expenditures relative to its total sales. R&D intensity captures the proportion of revenue devoted to innovation activities, allowing comparisons of innovation focus across firms of different sizes.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> A key outcome variable in studies of R&D tax credits and innovation incentives. Higher R&D intensity indicates greater relative commitment to innovation activities.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Research Data Center (RDC)
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Secure facilities operated by statistical agencies (e.g., U.S. Census Bureau) where approved researchers can access confidential microdata. Researchers must pass background checks, complete training, and work in monitored environments where data cannot leave the facility.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Required for accessing Census, IRS, and other administrative microdata; results must pass disclosure review before publication.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Return on Assets (ROA)
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> A profitability ratio calculated as net income divided by total assets. It measures how efficiently a company uses its assets to generate earnings.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Industry-adjusted ROA changes are used to evaluate post-acquisition operating performance in M&A studies.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Subsidiary
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> A company controlled by another company (the parent), typically through majority ownership of voting stock. Subsidiaries are separate legal entities that file their own tax returns but are consolidated into the parent's financial statements for reporting purposes.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> The count and location of subsidiaries (especially in tax havens) is used to measure corporate tax planning intensity and geographic profit allocation.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Staff Costs
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> Total personnel-related expenses incurred by a firm, including wages and salaries, employer payroll taxes, pension contributions, and other employee benefits. Staff costs represent the comprehensive cost of labor beyond just direct wage payments.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Used as a measure of labor compensation in studies examining how corporate taxes affect worker outcomes. The log of staff costs is a common dependent variable in tax incidence research.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Tax Haven
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> A jurisdiction with very low or no tax rates for foreign investors, often combined with strict secrecy laws. Common examples include Ireland, Luxembourg, Bermuda, the Cayman Islands, and the Netherlands.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> The count or percentage of subsidiaries in tax havens is used to measure firms' tax planning intensity and geographic profit shifting.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Tax-Free Reorganization (Stock-for-Stock)
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> An M&A transaction structured to qualify for tax-deferred treatment under the Internal Revenue Code, typically involving an exchange of stock rather than cash. Target shareholders defer capital gains tax until they sell the acquirer's stock.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Used as an indicator to study how tax considerations influence M&A deal structure and financing choices.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        Total Assets
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> The sum of all assets owned by a firm, including current assets (cash, receivables, inventory) and non-current assets (property, plant, equipment, intangibles). Total assets appear on the balance sheet and represent the resources available to generate future economic benefits.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> Widely used as a scaling variable to normalize measures across firms of different sizes (e.g., CapEx/Assets, R&D/Assets, Compensation/Assets). Lagged total assets are often preferred to avoid simultaneity concerns.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item glossary-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        User Cost of Capital (CoC)
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Definition:</strong> The minimum rate of return that an investment must yield to cover financing costs and taxes while breaking even. In neoclassical investment theory, the CoC depends on the interest rate, corporate tax rate, and tax depreciation rules. Firms maximize value by investing until the marginal product of capital equals the CoC.</p>
+                        <p style="margin-top: 0.5rem;"><em>Context in Research:</em> The theoretical foundation for studying real investment responses to taxation. Tax policy affects investment through changes in the CoC: more generous depreciation rules lower the CoC, while higher tax rates (absent full expensing) raise it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT TAB -->
+        <div id="about" class="tab-content">
+            <div class="section-header">
+                <h2>About This Resource</h2>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        📄 About the Paper
+                    </div>
+                    <div class="accordion-content">
+                        <h4>Abstract</h4>
+                        <p>This review synthesizes research on firms' real and reporting responses to taxation, providing a comprehensive measurement guide for tax research.</p>
+                        <h4 style="margin-top: 1rem;">Key Contributions</h4>
+                        <ul>
+                            <li>Comprehensive catalog of measurement approaches</li>
+                            <li>Detailed data source information with access requirements</li>
+                            <li>Pros and cons of different measurement choices</li>
+                            <li>Interactive format for easy navigation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        👤 About the Authors
+                    </div>
+                    <div class="accordion-content">
+                        <div class="subsection" style="margin-bottom: 1.5rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Rebecca Lester</h4>
+                            <p><strong>Associate Professor of Accounting (with tenure)</strong></p>
+                            <p><strong>Stanford University Graduate School of Business</strong></p>
+                            <p style="margin-top: 0.75rem;">Rebecca Lester is an Associate Professor of Accounting at the Stanford Graduate School of Business. She is also a Senior Fellow at the Stanford Institute for Economic Policy Research (SIEPR) and a Research Fellow at the Hoover Institution.</p>
+                            <p style="margin-top: 0.5rem;">Professor Lester's research studies how tax policies affect corporate investment and employment decisions. In particular, she demonstrates the critical role of reporting incentives, disclosure regimes, and information frictions in facilitating or altering the effectiveness of cross-border, federal, and local tax incentives.</p>
+                            <p style="margin-top: 0.5rem;">Her work has been cited by the U.S. Joint Committee on Taxation and featured in <em>The Wall Street Journal</em>, <em>Fortune</em>, <em>Bloomberg</em>, and <em>The Huffington Post</em>. She was selected as one of Poets and Quants "40 Best Business Professors Under 40" in 2018 and received the Stanford MBA Distinguished Teaching Award in 2021.</p>
+                            <p style="margin-top: 0.5rem;">Professor Lester received her PhD in Accounting from the MIT Sloan School of Management.</p>
+                            <p style="margin-top: 0.75rem;"><a href="https://www.beckylesteracctg.com/" target="_blank" style="color: #8C1515; font-weight: 600;">→ Visit Rebecca Lester's Website</a></p>
+                        </div>
+                        <div class="subsection">
+                            <h4 style="margin-bottom: 0.5rem;">Marcel Olbert</h4>
+                            <p><strong>Assistant Professor of Accounting</strong></p>
+                            <p><strong>London Business School</strong></p>
+                            <p style="margin-top: 0.75rem;">Marcel Olbert is an Assistant Professor of Accounting at London Business School. His research intersects the fields of disclosure regulation, corporate taxation, and corporate finance.</p>
+                            <p style="margin-top: 0.5rem;">Professor Olbert's work has been published in top-tier journals including <em>The Accounting Review</em>, the <em>Journal of Accounting and Economics</em>, the <em>Journal of Accounting Research</em>, and the <em>Review of Financial Studies</em>.</p>
+                            <p style="margin-top: 0.5rem;">He currently serves as an Associate Editor at the <em>European Accounting Review</em> and is a Junior Research Associate at ZEW (Leibniz Centre for European Economic Research) and a Research Fellow of TRR 266 Accounting for Transparency. For his work on international taxation, transparency, and multinational firms, he has received research grants from the NBER, the Wheeler Institute, and the ITFP. He was selected as one of Poets and Quants "40-Under-40 MBA Professors" in 2024.</p>
+                            <p style="margin-top: 0.75rem;"><a href="https://marcelolbert.com/" target="_blank" style="color: #8C1515; font-weight: 600;">→ Visit Marcel Olbert's Website</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        🙏 Acknowledgments
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Research Assistants:</strong> Lauren Andrews, Jensen Ahokovi, Manon Francois, and Qihang Zhang.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Funding Sources:</strong> Marcel Olbert acknowledges the financial support of the Research and Materials Development Fund (Olbert_2023_8934) at London Business School.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        📧 Contact & Feedback
+                    </div>
+                    <div class="accordion-content">
+                        <p>For questions, suggestions, or to report errors, please contact the authors:</p>
+                        <ul style="margin-top: 0.75rem;">
+                            <li><strong>Rebecca Lester:</strong> <a href="mailto:rlester@stanford.edu" style="color: #8C1515;">rlester@stanford.edu</a></li>
+                            <li><strong>Marcel Olbert:</strong> <a href="mailto:molbert@london.edu" style="color: #8C1515;">molbert@london.edu</a></li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>We welcome feedback on:</strong></p>
+                        <ul>
+                            <li>Suggestions for new measures to include</li>
+                            <li>Corrections or updates to existing entries</li>
+                            <li>Additional data sources</li>
+                            <li>Improvements to the interactive resource</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        📋 Updates & Version History
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Version 1.0</strong> - Initial release</p>
+                        <p><em>Future updates will be documented here</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>Last Updated:</strong> January 2026</p>
+            <p><strong>Version:</strong> 1.0</p>
+            <p><strong>Questions or Suggestions?</strong> <a href="mailto:rlester@stanford.edu">Contact Authors</a></p>
+            <p><strong>Access Full Paper:</strong> <a href="https://www.sciencedirect.com/science/article/pii/S0165410125000734" target="_blank">Journal of Accounting and Economics (Open Access)</a></p>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem;">A resource from Stanford Graduate School of Business and London Business School</p>
+            <p style="margin-top: 0.5rem;">&copy; 2025 Rebecca Lester & Marcel Olbert. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Hide all tab contents
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            // Remove active class from all tabs
+            var tabs = document.getElementsByClassName("nav-tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+
+            // Show the selected tab
+            document.getElementById(tabName).classList.add("active");
+
+            // Add active class to the clicked tab
+            if (evt && evt.currentTarget) {
+                evt.currentTarget.classList.add("active");
+            } else {
+                // If called programmatically, find and activate the right tab
+                var tabs = document.getElementsByClassName("nav-tab");
+                for (var i = 0; i < tabs.length; i++) {
+                    if (tabs[i].getAttribute("onclick").includes(tabName)) {
+                        tabs[i].classList.add("active");
+                        break;
+                    }
+                }
+            }
+
+            // Reset panel states when switching to browse or explore tabs
+            if (tabName === 'browse') {
+                showBrowseLanding();
+            } else if (tabName === 'explore') {
+                showExploreLanding();
+            }
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function toggleAccordion(element) {
+            var content = element.nextElementSibling;
+            var allContents = document.getElementsByClassName("accordion-content");
+            
+            // Close all other accordion items
+            for (var i = 0; i < allContents.length; i++) {
+                if (allContents[i] !== content) {
+                    allContents[i].classList.remove("active");
+                }
+            }
+            
+            // Toggle the clicked item
+            content.classList.toggle("active");
+        }
+
+        // Searchable measures database
+        var measuresData = [
+            // Investment Measures - Panel A
+            {category: "Investment", panel: "Annual Change in Fixed Assets", measure: "CapEx / PP&E", pros: "Adjusts for size; improves cross-unit comparability; simple and directly interpretable magnitude", cons: "Sensitive to small/noisy denominators", sources: "COMP", link: "outcome-investment"},
+            {category: "Investment", panel: "Annual Change in Fixed Assets", measure: "Domestic/Foreign CapEx / PP&E", pros: "Adjusts for size; improves cross-unit comparability", cons: "Sensitive to small/noisy denominators", sources: "BEA-MICRO", link: "outcome-investment"},
+            {category: "Investment", panel: "Annual Change in Fixed Assets", measure: "Establishment-specific CapEx / PP&E", pros: "Adjusts for size; improves cross-unit comparability", cons: "Sensitive to small/noisy denominators", sources: "CM, ASM, LBD, ACES", link: "outcome-investment"},
+            {category: "Investment", panel: "Annual Change in Fixed Assets", measure: "Change in Net Fixed Assets / Assets", pros: "Captures period-to-period investment changes; adjusts for size", cons: "Sensitive to small/noisy denominators", sources: "ORBIS", link: "outcome-investment"},
+            {category: "Investment", panel: "Annual Change in Fixed Assets", measure: "Log(Investment)", pros: "Reduces skew and stabilizes relative variation; enables multiplicative interpretation", cons: "Undefined for non-positive values; zeros need adjustment", sources: "CM, QWI", link: "outcome-investment"},
+            {category: "Investment", panel: "Level of Investment", measure: "Log(Dom CapEx / For CapEx)", pros: "Reduces skew; adjusts for size", cons: "Undefined for non-positive values; sensitive to small denominators", sources: "COMP", link: "outcome-investment"},
+            {category: "Investment", panel: "Level of Investment", measure: "Log(Tangible fixed assets)", pros: "Reduces skew and stabilizes relative variation", cons: "Undefined for non-positive values; zeros need adjustment", sources: "ORBIS", link: "outcome-investment"},
+            {category: "Investment", panel: "Level of Investment", measure: "CapEx (level)", pros: "Simple and directly interpretable magnitude", cons: "Lacks size adjustment", sources: "COMP", link: "outcome-investment"},
+            // R&D and Innovation Measures
+            {category: "R&D and Innovation", panel: "R&D Expenditures", measure: "R&D Expenditure / Assets", pros: "Adjusts for size; improves cross-unit comparability", cons: "Sensitive to small/noisy denominators", sources: "COMP", link: "outcome-rnd"},
+            {category: "R&D and Innovation", panel: "R&D Expenditures", measure: "Log(R&D expenditure)", pros: "Reduces skew and stabilizes relative variation", cons: "Undefined for non-positive values; zeros need adjustment", sources: "COMP", link: "outcome-rnd"},
+            {category: "R&D and Innovation", panel: "R&D Intensity", measure: "R&D Expenditure / Total Sales", pros: "Adjusts for size; improves cross-unit comparability", cons: "Sensitive to small/noisy denominators", sources: "COMP, CHINA-TAX, IRS-SOI-4562", link: "outcome-rnd"},
+            {category: "R&D and Innovation", panel: "Number of Patents", measure: "Citation-weighted patent counts", pros: "Quality-weighted proxy; simple magnitude", cons: "Lacks size adjustment", sources: "PATSTAT, ORBIS", link: "outcome-rnd"},
+            {category: "R&D and Innovation", panel: "Number of Patents", measure: "Log(Patent grants)", pros: "Reduces skew", cons: "Adding 1 can bias results if zeros are frequent", sources: "PATSTAT", link: "outcome-rnd"},
+            {category: "R&D and Innovation", panel: "Patent Citations", measure: "Log(Forward citations)", pros: "Reduces skew", cons: "Undefined for non-positive values", sources: "G-PAT, USPTO", link: "outcome-rnd"},
+            {category: "R&D and Innovation", panel: "Patent Citations", measure: "Citations per patent", pros: "Adjusts for size; quality-weighted", cons: "Sensitive to small denominators", sources: "NBER-PAT", link: "outcome-rnd"},
+            // M&A Measures
+            {category: "M&A", panel: "Probability of M&A", measure: "Dummy for acquisition", pros: "Simple and directly interpretable; bounded support", cons: "Loses information on intensity, size, and magnitude", sources: "ZEPHYR, SDC", link: "outcome-ma"},
+            {category: "M&A", panel: "Number of Deals", measure: "Number of Deals", pros: "Simple and directly interpretable magnitude", cons: "Lacks size adjustment", sources: "ZEPHYR, SDC", link: "outcome-ma"},
+            {category: "M&A", panel: "Number of Deals", measure: "Log(M&A deals)", pros: "Reduces skew; enables multiplicative interpretation", cons: "Undefined for non-positive values", sources: "ORBIS, ZEPHYR", link: "outcome-ma"},
+            {category: "M&A", panel: "Value of Deals", measure: "Log(Total deal value)", pros: "Reduces skew", cons: "Adding 1 can bias results", sources: "SDC", link: "outcome-ma"},
+            {category: "M&A", panel: "Profitability", measure: "Acquisition premium over target price", pros: "Adjusts for size; improves cross-unit comparability", cons: "Sensitive to small denominators", sources: "SDC", link: "outcome-ma"},
+            {category: "M&A", panel: "Profitability", measure: "3-day CAR for acquiring firm", pros: "Captures market reaction", cons: "Short window limitations", sources: "SDC", link: "outcome-ma"},
+            // Employment Measures
+            {category: "Employment", panel: "Number of Employees", measure: "Number of employees", pros: "Simple and directly interpretable magnitude", cons: "Lacks size adjustment", sources: "QCEW, NETS, CRSP, LBD, IAB-LIAB", link: "outcome-employment"},
+            {category: "Employment", panel: "Number of Employees", measure: "Log(Domestic employees)", pros: "Reduces skew; enables multiplicative interpretation", cons: "Undefined for non-positive values", sources: "IRS-1120, NETS, LBD, ORBIS, CBP, BEA-MICRO, COMP", link: "outcome-employment"},
+            {category: "Employment", panel: "Number of Employees", measure: "Growth rate of employment", pros: "Captures period-to-period changes", cons: "Lacks size adjustment", sources: "NETS, ORBIS, SWE-ADMIN", link: "outcome-employment"},
+            {category: "Employment", panel: "Wage", measure: "Log(Median full-time wage)", pros: "Reduces skew", cons: "Undefined for non-positive values", sources: "IAB-LIAB", link: "outcome-employment"},
+            {category: "Employment", panel: "Wage", measure: "Compensation scaled by assets", pros: "Adjusts for size; improves cross-unit comparability", cons: "Sensitive to small denominators", sources: "ORBIS", link: "outcome-employment"},
+            {category: "Employment", panel: "Wage", measure: "Average annual wage per employee", pros: "Adjusts for size", cons: "Sensitive to small denominators", sources: "QCEW, NETS, CRSP", link: "outcome-employment"},
+            {category: "Employment", panel: "Employee Satisfaction", measure: "Median employee ratings", pros: "Simple magnitude", cons: "Selection bias", sources: "GLASSDOOR, LEXIS", link: "outcome-employment"},
+            // Geographic Allocation Measures
+            {category: "Geographic Allocation", panel: "Foreign Subsidiary Holdings", measure: "Foreign equity holding company dummy", pros: "Simple and directly interpretable; bounded support", cons: "Loses information on intensity", sources: "ORBIS, COMP", link: "outcome-geo"},
+            {category: "Geographic Allocation", panel: "Foreign Subsidiary Holdings", measure: "Count of tax haven subsidiaries", pros: "Simple and directly interpretable", cons: "Lacks size adjustment", sources: "COMP, ANN-REP", link: "outcome-geo"},
+            {category: "Geographic Allocation", panel: "Foreign Subsidiary Holdings", measure: "% of subsidiaries in tax havens", pros: "Adjusts for size", cons: "Sensitive to small denominators", sources: "COMP, ANN-REP", link: "outcome-geo"},
+            {category: "Geographic Allocation", panel: "Foreign Subsidiary Holdings", measure: "Double Irish structure indicator", pros: "Simple and directly interpretable", cons: "Loses information on intensity", sources: "SEC-EDGAR-21", link: "outcome-geo"},
+            {category: "Geographic Allocation", panel: "Capital Investment Flows", measure: "Foreign CapEx / Assets", pros: "Adjusts for size", cons: "Sensitive to small denominators", sources: "COMP-GEO, WSP, COMP, BEA-DIA, 10-K", link: "outcome-geo"},
+            {category: "Geographic Allocation", panel: "Capital Investment Flows", measure: "Foreign Cash / Assets (trapped cash)", pros: "Adjusts for size", cons: "Sensitive to small denominators", sources: "COMP, BEA-DIA", link: "outcome-geo"},
+            {category: "Geographic Allocation", panel: "Capital Investment Flows", measure: "Repatriation Dividends / Assets", pros: "Adjusts for size; direct measure of capital flows", cons: "Sensitive to small denominators", sources: "BEA-DIA", link: "outcome-geo"}
+        ];
+
+        function searchMeasures(query) {
+            var resultsDiv = document.getElementById("search-results");
+
+            if (query.length < 2) {
+                resultsDiv.innerHTML = '<p style="color: #666; text-align: center; padding: 2rem;"><em>Enter at least 2 characters to search...</em></p>';
+                return;
+            }
+
+            var queryLower = query.toLowerCase();
+            var results = measuresData.filter(function(item) {
+                return item.measure.toLowerCase().includes(queryLower) ||
+                       item.category.toLowerCase().includes(queryLower) ||
+                       item.panel.toLowerCase().includes(queryLower) ||
+                       item.pros.toLowerCase().includes(queryLower) ||
+                       item.cons.toLowerCase().includes(queryLower) ||
+                       item.sources.toLowerCase().includes(queryLower);
+            });
+
+            if (results.length === 0) {
+                resultsDiv.innerHTML = '<div class="overview-box"><h4>No results found for "' + query + '"</h4><p>Try searching for measure names, data sources (e.g., COMP, ORBIS), or categories (e.g., Investment, Employment).</p></div>';
+                return;
+            }
+
+            var html = '<div class="overview-box"><h4>' + results.length + ' result(s) for "' + query + '"</h4></div>';
+            html += '<div class="overflow-scroll"><table><thead><tr><th>Category</th><th>Panel</th><th>Measure</th><th>Pro(s)</th><th>Con(s)</th><th><a href="#" onclick="goToDataSources(); return false;" style="color: white; text-decoration: underline;">Data Source(s)</a></th></tr></thead><tbody>';
+
+            results.forEach(function(item) {
+                html += '<tr onclick="openTab(null, \'explore\'); setTimeout(function(){ showPanel(\'' + item.link + '\'); }, 100);" style="cursor: pointer;">';
+                html += '<td>' + item.category + '</td>';
+                html += '<td>' + item.panel + '</td>';
+                html += '<td>' + item.measure + '</td>';
+                html += '<td>' + item.pros + '</td>';
+                html += '<td>' + item.cons + '</td>';
+                html += '<td>' + item.sources + '</td>';
+                html += '</tr>';
+            });
+
+            html += '</tbody></table></div>';
+            html += '<p style="margin-top: 1rem; color: #666; font-size: 0.9rem;"><em>Click on a row to view the full measure details in its category.</em></p>';
+
+            resultsDiv.innerHTML = html;
+        }
+
+        function showPanel(panelId) {
+            // Hide all landings
+            var landings = ['browse-landing', 'explore-landing'];
+            for (var i = 0; i < landings.length; i++) {
+                var el = document.getElementById(landings[i]);
+                if (el) el.style.display = 'none';
+            }
+            
+            // Hide all panels first (safety)
+            var panels = document.getElementsByClassName('panel-view');
+            for (var i = 0; i < panels.length; i++) {
+                panels[i].style.display = 'none';
+            }
+            
+            // Show target panel
+            document.getElementById(panelId).style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function showBrowseLanding() {
+            var panels = document.getElementsByClassName('panel-view');
+            for (var i = 0; i < panels.length; i++) {
+                panels[i].style.display = 'none';
+            }
+            document.getElementById('browse-landing').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function showExploreLanding() {
+            var panels = document.getElementsByClassName('panel-view');
+            for (var i = 0; i < panels.length; i++) {
+                panels[i].style.display = 'none';
+            }
+            document.getElementById('explore-landing').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function filterTable(tableId, inputId) {
+            var input = document.getElementById(inputId);
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById(tableId);
+            var tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (var i = 1; i < tr.length; i++) { // Start at 1 to skip header
+                var tdArray = tr[i].getElementsByTagName("td");
+                var found = false;
+                // Search all columns
+                for (var j = 0; j < tdArray.length; j++) {
+                    if (tdArray[j]) {
+                        var txtValue = tdArray[j].textContent || tdArray[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                if (found) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
+        function filterGlossary() {
+            var input = document.getElementById('glossary-filter');
+            var filter = input.value.toUpperCase();
+            var items = document.getElementsByClassName('glossary-item');
+
+            for (var i = 0; i < items.length; i++) {
+                var header = items[i].getElementsByClassName('accordion-header')[0];
+                var content = items[i].getElementsByClassName('accordion-content')[0];
+                var text = header.textContent || header.innerText;
+                var contentText = content.textContent || content.innerText;
+
+                if (text.toUpperCase().indexOf(filter) > -1 || contentText.toUpperCase().indexOf(filter) > -1) {
+                    items[i].style.display = "";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+
+        function goToDataSources() {
+            openTab(null, 'browse');
+        }
+    </script>
+</body>
+</html>
+
