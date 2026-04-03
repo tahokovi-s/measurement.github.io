@@ -451,7 +451,7 @@
                 </div>
                 <div class="card" onclick="openTab(event, 'browse')">
                     <h3>🗂️ Browse Data Sources</h3>
-                    <p>Search our comprehensive database of 49 datasets used in tax research</p>
+                    <p>Search our comprehensive database of 51 datasets used in tax research</p>
                 </div>
                 <div class="card" onclick="openTab(event, 'search')">
                     <h3>🔍 Search Measures</h3>
@@ -717,7 +717,12 @@
                         [l] <a href="https://publications.aaahq.org/jata/article/46/1/57/11526/Did-FASB-Interpretation-Number-48-FIN-48-Affect" target="_blank" style="color: #8C1515;">Goldman (2023)</a>;
                         [m] <a href="https://www.sciencedirect.com/science/article/pii/S016541012400048X" target="_blank" style="color: #8C1515;">Hepfer et al. (2025)</a>;
                         [n] <a href="https://doi.org/10.1111/1911-3846.12588" target="_blank" style="color: #8C1515;">Huang et al. (2020)</a>, <a href="https://publications.aaahq.org/accounting-review/article-abstract/96/3/403/4289/Dividend-Taxes-Investor-Horizon-and-Idiosyncratic?redirectedFrom=fulltext" target="_blank" style="color: #8C1515;">Li et al. (2021)</a>;
-                        [o] <a href="https://doi.org/10.1093/qje/qjab022" target="_blank" style="color: #8C1515;">Akcigit et al. (2022)</a>.
+                        [o] <a href="https://doi.org/10.1093/qje/qjab022" target="_blank" style="color: #8C1515;">Akcigit et al. (2022)</a>;
+                        [p] <a href="https://doi.org/10.2308/TAR-2018-0582" target="_blank" style="color: #8C1515;">Williams &amp; Williams (2021)</a>;
+                        [q] <a href="https://doi.org/10.1016/j.jfineco.2017.01.004" target="_blank" style="color: #8C1515;">Mukherjee et al. (2017)</a>;
+                        [r] <a href="https://doi.org/10.1287/mnsc.2022.4469" target="_blank" style="color: #8C1515;">Glaeser, Glaeser &amp; Labro (2023)</a>;
+                        [s] <a href="https://doi.org/10.1162/rest.91.2.431" target="_blank" style="color: #8C1515;">Wilson (2009)</a>;
+                        [t] <a href="https://doi.org/10.1111/1911-3846.12905" target="_blank" style="color: #8C1515;">Goldman et al. (2024)</a>.
                     </p>
                 </div>
 
@@ -741,21 +746,21 @@
                                     <td>R&D Expend / Assets<sub>t0</sub></td>
                                     <td>Adjusts for size; improves cross-unit comparability; simple and directly interpretable magnitude</td>
                                     <td>Sensitive to small/noisy denominators</td>
-                                    <td>COMP<sup>[a]</sup></td>
+                                    <td>COMP<sup>[a],[p]</sup></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>Log(R&D expenditure)</td>
                                     <td>Reduces skew and stabilizes relative variation; enables multiplicative interpretation</td>
                                     <td>Undefined for non-positive values; zeros need adjustment</td>
-                                    <td>COMP<sup>[b],[c]</sup></td>
+                                    <td>COMP<sup>[b],[c],[q]</sup></td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>R&D expenditures</td>
                                     <td>Simple and directly interpretable magnitude</td>
                                     <td>Lacks size adjustment</td>
-                                    <td>CRA<sup>[d]</sup>, HMRC<sup>[e]</sup></td>
+                                    <td>CRA<sup>[d]</sup>, HMRC<sup>[e]</sup>, STATE-RD<sup>[s]</sup></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -857,14 +862,14 @@
                                     <td>Log(Patent applications)</td>
                                     <td>See #2</td>
                                     <td>See #4</td>
-                                    <td>PATSTAT<sup>[k]</sup></td>
+                                    <td>PATSTAT<sup>[k],[t]</sup></td>
                                 </tr>
                                 <tr>
                                     <td>10</td>
                                     <td>Number of patents</td>
                                     <td>See #3</td>
                                     <td>See #3</td>
-                                    <td>PATSTAT<sup>[k]</sup></td>
+                                    <td>PATSTAT<sup>[k],[q],[r]</sup></td>
                                 </tr>
                                 <tr>
                                     <td>11</td>
