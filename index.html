@@ -247,6 +247,21 @@
             margin-bottom: 0.5rem;
         }
 
+        .form-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #8C1515;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .form-button:hover {
+            background: #820000;
+        }
+
         .accordion {
             margin: 1rem 0;
         }
@@ -409,6 +424,7 @@
             <button class="nav-tab" onclick="openTab(event, 'search')">Search Measures</button>
             <button class="nav-tab" onclick="openTab(event, 'glossary')">Glossary</button>
             <button class="nav-tab" onclick="openTab(event, 'about')">About</button>
+            <button class="nav-tab" onclick="openTab(event, 'contact')">Contact</button>
         </div>
     </nav>
 
@@ -460,6 +476,10 @@
                 <div class="card" onclick="openTab(event, 'about')">
                     <h3>About</h3>
                     <p>Information on how to cite this resource and the original paper</p>
+                </div>
+                <div class="card" onclick="openTab(null, 'contact')">
+                    <h3>Contact</h3>
+                    <p>Ask a question, share feedback, or suggest a new paper, measure, or data source</p>
                 </div>
             </div>
 
@@ -2823,11 +2843,10 @@
                         Contact & Feedback
                     </div>
                     <div class="accordion-content">
-                        <p>For questions, suggestions, or to report errors, please contact the authors:</p>
-                        <ul style="margin-top: 0.75rem;">
-                            <li><strong>Rebecca Lester:</strong> <a href="mailto:rlester@stanford.edu" style="color: #8C1515;">rlester@stanford.edu</a></li>
-                            <li><strong>Marcel Olbert:</strong> <a href="mailto:marcel.olbert@uni-mannheim.de" style="color: #8C1515;">marcel.olbert@uni-mannheim.de</a></li>
-                        </ul>
+                        <p>For questions, corrections, or to suggest a new paper, measure, or data source, please use our Contact page. Submitting through the forms there routes your message to the authors and helps us respond more quickly.</p>
+                        <p style="margin-top: 1rem;">
+                            <a href="#" onclick="openTab(null, 'contact'); return false;" class="form-button">Go to the Contact Page &rarr;</a>
+                        </p>
                         <p style="margin-top: 1rem;"><strong>We welcome feedback on:</strong></p>
                         <ul>
                             <li>Suggestions for new measures to include</li>
@@ -2849,13 +2868,38 @@
                 </div>
             </div>
         </div>
+
+        <!-- CONTACT TAB -->
+        <div id="contact" class="tab-content">
+            <div class="section-header">
+                <h2>Contact</h2>
+                <p>Have a question or something to add to this resource? Use the forms below. They let us track and respond to every message, and they are the fastest way to reach the authors.</p>
+            </div>
+
+            <div class="citation-box">
+                <h3>Questions or Feedback</h3>
+                <p>Spot an error, have a question about a measure or data source, or want to suggest an improvement to the site? Send it here and we will follow up. We ask for your name and email only so that we can reply.</p>
+                <p style="margin-top: 1rem;">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkCj-mFPg8smqQ8uFG2pap4-5Rb7wxtnbQptrRLXCkDumqEg/viewform" target="_blank" rel="noopener noreferrer" class="form-button">Open the Feedback Form &rarr;</a>
+                </p>
+            </div>
+
+            <div class="citation-box">
+                <h3>New Papers, New Measures, or New Data</h3>
+                <p>Know of a paper, measurement approach, or dataset that belongs in this guide? Tell us about it. Include a title, a short description, and a link, and optionally attach the paper or a supporting file.</p>
+                <p style="margin-top: 1rem;">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSecLTtJIGcE4Qaw_ZwvMOOVfJvzYONGdbhf0Uy1Of5xW2Xa_A/viewform" target="_blank" rel="noopener noreferrer" class="form-button">Open the Submission Form &rarr;</a>
+                </p>
+                <p style="margin-top: 0.75rem; font-size: 0.9rem; color: #666;"><em>Please note:</em> because this form supports file uploads, Google requires you to sign in with a Google account to open it. If you would prefer not to sign in, use the Questions or Feedback form above and paste a link to the paper there instead.</p>
+            </div>
+        </div>
     </div>
 
     <footer class="footer">
         <div class="footer-content">
             <p><strong>Last Updated:</strong> January 2026</p>
             <p><strong>Version:</strong> 1.0</p>
-            <p><strong>Questions or Suggestions?</strong> <a href="mailto:rlester@stanford.edu">Contact Authors</a></p>
+            <p><strong>Questions or Suggestions?</strong> <a href="#" onclick="openTab(null, 'contact'); return false;">Contact &amp; Contribute</a></p>
             <p><strong>Access Full Paper:</strong> <a href="https://www.sciencedirect.com/science/article/pii/S0165410125000734" target="_blank">Journal of Accounting and Economics (Open Access)</a></p>
             <p style="margin-top: 1.5rem; font-size: 0.9rem;">A resource from Stanford Graduate School of Business and University of Mannheim</p>
             <p style="margin-top: 0.5rem;">&copy; 2025 Rebecca Lester & Marcel Olbert. All rights reserved.</p>
